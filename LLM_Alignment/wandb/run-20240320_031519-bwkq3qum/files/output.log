@@ -1,0 +1,328 @@
+  0%|                                                                                       | 0/200 [00:00<?, ?it/s]/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py:31: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn("None of the inputs have requires_grad=True. Gradients will be None")
+  0%|▍                                                                              | 1/200 [00:04<14:49,  4.47s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 15%|███████████▋                                                                  | 30/200 [00:52<05:47,  2.04s/it]
+  0%|                                                                                        | 0/25 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.08s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 30%|███████████████████████▍                                                      | 60/200 [02:37<04:02,  1.73s/it]
+{'loss': 1.8973, 'grad_norm': 2.0361781120300293, 'learning_rate': 3.9917237207221406e-05, 'epoch': 0.6}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.08s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 45%|███████████████████████████████████                                           | 90/200 [04:20<02:46,  1.52s/it]
+  0%|                                                                                        | 0/25 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 25/25 [00:54<00:00,  2.05s/it]
+
+
+
+
+
+ 50%|██████████████████████████████████████▌                                      | 100/200 [05:28<02:57,  1.78s/it]/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/utils/save_and_load.py:139: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/utils/save_and_load.py:139: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py:31: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn("None of the inputs have requires_grad=True. Gradients will be None")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 60%|██████████████████████████████████████████████▏                              | 120/200 [06:49<01:43,  1.29s/it]
+{'loss': 1.8225, 'grad_norm': 4.328405380249023, 'learning_rate': 1.742487049232818e-05, 'epoch': 1.2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.08s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 75%|█████████████████████████████████████████████████████████▊                   | 150/200 [08:30<00:51,  1.04s/it]
+  0%|                                                                                        | 0/25 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 25/25 [00:54<00:00,  2.04s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 90%|█████████████████████████████████████████████████████████████████████▎       | 180/200 [10:18<00:37,  1.88s/it]
+{'loss': 1.8117, 'grad_norm': 2.602665662765503, 'learning_rate': 1.2358127653054303e-06, 'epoch': 1.8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.08s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████| 200/200 [11:41<00:00,  1.08s/it]/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/utils/save_and_load.py:139: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+  warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+100%|█████████████████████████████████████████████████████████████████████████████| 200/200 [12:24<00:00,  3.72s/it]
+{'train_runtime': 755.7877, 'train_samples_per_second': 2.117, 'train_steps_per_second': 0.265, 'train_loss': 1.8466639453172684, 'epoch': 2.0}
+################# Training is done
+Loading checkpoint shards:   0%|                                                              | 0/2 [00:00<?, ?it/s]
+
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.11it/s]
+################# Merged
+####################### Model saved at :  ./saved-models/experiment/merged_model

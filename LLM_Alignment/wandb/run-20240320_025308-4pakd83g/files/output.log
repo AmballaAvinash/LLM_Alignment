@@ -1,0 +1,36 @@
+  0%|                                                                                        | 0/26 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "sft_trainer.py", line 284, in <module>
+    SFT(input_args)
+  File "sft_trainer.py", line 209, in SFT
+    trainer.train()
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/trl/trainer/sft_trainer.py", line 360, in train
+    output = super().train(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 1961, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2902, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2925, in compute_loss
+    outputs = model(**inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/peft_model.py", line 1091, in forward
+    return self.base_model(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/tuners/tuners_utils.py", line 160, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 1073, in forward
+    outputs = self.model(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 885, in forward
+    causal_mask = self._update_causal_mask(attention_mask, inputs_embeds)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 969, in _update_causal_mask
+    causal_mask = self.causal_mask[None, None, :, :].repeat(batch_size, 1, 1, 1).to(dtype) * min_dtype
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 16.00 GiB (GPU 0; 22.40 GiB total capacity; 7.17 GiB already allocated; 14.24 GiB free; 7.99 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

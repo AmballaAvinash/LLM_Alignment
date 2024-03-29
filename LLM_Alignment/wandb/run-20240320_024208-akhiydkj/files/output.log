@@ -1,0 +1,85 @@
+  0%|                                                                                      | 0/4668 [00:00<?, ?it/s]/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py:31: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn("None of the inputs have requires_grad=True. Gradients will be None")
+  0%|                                                                           | 1/4668 [00:26<34:43:52, 26.79s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|▏                                                                          | 15/4668 [01:44<6:28:35,  5.01s/it]Traceback (most recent call last):
+  File "sft_trainer.py", line 283, in <module>
+    SFT(input_args)
+  File "sft_trainer.py", line 208, in SFT
+    trainer.train()
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/trl/trainer/sft_trainer.py", line 360, in train
+    output = super().train(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 1961, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2902, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2925, in compute_loss
+    outputs = model(**inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/peft_model.py", line 1091, in forward
+    return self.base_model(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/tuners/tuners_utils.py", line 160, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/mistral/modeling_mistral.py", line 1157, in forward
+    outputs = self.model(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/mistral/modeling_mistral.py", line 1032, in forward
+    layer_outputs = self._gradient_checkpointing_func(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py", line 249, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py", line 107, in forward
+    outputs = run_function(*args)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/mistral/modeling_mistral.py", line 757, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/mistral/modeling_mistral.py", line 315, in forward
+    attn_output = self.o_proj(attn_output)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/tuners/lora/bnb.py", line 334, in forward
+    result = self.base_layer(x, *args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/bitsandbytes/nn/modules.py", line 429, in forward
+    out = bnb.matmul_4bit(x, self.weight.t(), bias=bias, quant_state=self.weight.quant_state)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py", line 577, in matmul_4bit
+    return MatMul4Bit.apply(A, B, out, bias, quant_state)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/bitsandbytes/autograd/_functions.py", line 516, in forward
+    output = torch.nn.functional.linear(A, F.dequantize_4bit(B, quant_state).to(A.dtype).t(), bias)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/bitsandbytes/functional.py", line 1073, in dequantize_4bit
+    absmax = dequantize_blockwise(quant_state.absmax, quant_state.state2)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/bitsandbytes/functional.py", line 864, in dequantize_blockwise
+    lib.cdequantize_blockwise_fp32(get_ptr(quant_state.code), get_ptr(A), get_ptr(absmax), get_ptr(out), ct.c_int(quant_state.blocksize), ct.c_int(A.numel()))
+KeyboardInterrupt

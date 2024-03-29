@@ -1,0 +1,69 @@
+  0%|                                                                                       | 0/200 [00:00<?, ?it/s]/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py:31: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn("None of the inputs have requires_grad=True. Gradients will be None")
+  0%|▍                                                                              | 1/200 [00:04<14:27,  4.36s/it]
+
+
+
+
+
+
+
+
+  5%|███▉                                                                          | 10/200 [00:21<05:35,  1.77s/it]
+{'loss': 0.0, 'grad_norm': 0.0, 'learning_rate': 4.9748082755013934e-05, 'epoch': 0.1}
+
+  File "sft_trainer.py", line 284, in <module>                                       | 3/25 [00:07<00:48,  2.19s/it]
+    SFT(input_args)
+  File "sft_trainer.py", line 209, in SFT
+    trainer.train()
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/trl/trainer/sft_trainer.py", line 360, in train
+    output = super().train(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2029, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2412, in _maybe_log_save_evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 3229, in evaluate
+    output = eval_loop(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 3418, in evaluation_loop
+    loss, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 3635, in prediction_step
+    loss, outputs = self.compute_loss(model, inputs, return_outputs=True)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2925, in compute_loss
+    outputs = model(**inputs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/peft_model.py", line 1091, in forward
+    return self.base_model(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/tuners/tuners_utils.py", line 160, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 1073, in forward
+    outputs = self.model(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 914, in forward
+    layer_outputs = decoder_layer(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 646, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/accelerate/hooks.py", line 166, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/models/gemma/modeling_gemma.py", line 174, in forward
+    return self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/tuners/lora/bnb.py", line 359, in forward
+    result = result + output
+KeyboardInterrupt

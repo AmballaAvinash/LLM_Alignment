@@ -1,0 +1,193 @@
+2024-03-20 03:47:03,317 INFO    StreamThr :258106 [internal.py:wandb_internal():86] W&B internal server running at pid: 258106, started at: 2024-03-20 03:47:03.316619
+2024-03-20 03:47:03,319 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: status
+2024-03-20 03:47:03,329 INFO    WriterThread:258106 [datastore.py:open_for_write():87] open: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/run-u2vmszn9.wandb
+2024-03-20 03:47:03,330 DEBUG   SenderThread:258106 [sender.py:send():378] send: header
+2024-03-20 03:47:03,331 DEBUG   SenderThread:258106 [sender.py:send():378] send: run
+2024-03-20 03:47:03,828 INFO    SenderThread:258106 [dir_watcher.py:__init__():211] watching files in: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files
+2024-03-20 03:47:03,828 INFO    SenderThread:258106 [sender.py:_start_run_threads():1099] run started: u2vmszn9 with start time 1710906423.320987
+2024-03-20 03:47:03,842 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: check_version
+2024-03-20 03:47:03,842 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: check_version
+2024-03-20 03:47:03,926 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: run_start
+2024-03-20 03:47:03,963 DEBUG   HandlerThread:258106 [system_info.py:__init__():26] System info init
+2024-03-20 03:47:03,963 DEBUG   HandlerThread:258106 [system_info.py:__init__():41] System info init done
+2024-03-20 03:47:03,963 INFO    HandlerThread:258106 [system_monitor.py:start():194] Starting system monitor
+2024-03-20 03:47:03,963 INFO    SystemMonitor:258106 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-20 03:47:03,964 INFO    HandlerThread:258106 [system_monitor.py:probe():214] Collecting system info
+2024-03-20 03:47:03,965 INFO    SystemMonitor:258106 [interfaces.py:start():190] Started cpu monitoring
+2024-03-20 03:47:03,966 INFO    SystemMonitor:258106 [interfaces.py:start():190] Started disk monitoring
+2024-03-20 03:47:03,967 INFO    SystemMonitor:258106 [interfaces.py:start():190] Started gpu monitoring
+2024-03-20 03:47:03,968 INFO    SystemMonitor:258106 [interfaces.py:start():190] Started memory monitoring
+2024-03-20 03:47:03,969 INFO    SystemMonitor:258106 [interfaces.py:start():190] Started network monitoring
+2024-03-20 03:47:03,979 DEBUG   HandlerThread:258106 [system_info.py:probe():150] Probing system
+2024-03-20 03:47:03,986 DEBUG   HandlerThread:258106 [gitlib.py:_init_repo():56] git repository is invalid
+2024-03-20 03:47:03,986 DEBUG   HandlerThread:258106 [system_info.py:probe():198] Probing system done
+2024-03-20 03:47:03,986 DEBUG   HandlerThread:258106 [system_monitor.py:probe():223] {'os': 'Linux-5.4.0-170-generic-x86_64-with-glibc2.10', 'python': '3.8.18', 'heartbeatAt': '2024-03-20T03:47:03.980043', 'startedAt': '2024-03-20T03:47:03.284390', 'docker': None, 'cuda': None, 'args': ('--model_name_or_path', 'google/gemma-2b', '--per_device_train_batch_size', '8', '--per_device_eval_batch_size', '8', '--gradient_accumulation_steps', '1', '--learning_rate', '5e-5', '--report_to', 'wandb', '--run_name', 'SFT_training', '--max_seq_length', '1024', '--num_train_epochs', '2', '--evaluation_strategy', 'steps', '--eval_steps', '30', '--logging_strategy', 'steps', '--log_steps', '30', '--logging_first_step', '--save_strategy', 'epoch', '--save_steps', '1', '--lora_rank', '8', '--lora_alpha', '32', '--lora_dropout', '0.1', '--output_dir', './saved-models/experiment_again'), 'state': 'running', 'program': 'sft_trainer.py', 'codePathLocal': 'sft_trainer.py', 'codePath': 'sft_trainer.py', 'host': 'gypsum-gpu016', 'username': 'dsaluru_umass_edu', 'executable': '/home/dsaluru_umass_edu/.conda/envs/llm_alignment/bin/python', 'cpu_count': 12, 'cpu_count_logical': 12, 'cpu_freq': {'current': 1737.0157500000005, 'min': 1200.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 2959.064, 'min': 1200.0, 'max': 3200.0}, {'current': 1647.415, 'min': 1200.0, 'max': 3200.0}, {'current': 1636.156, 'min': 1200.0, 'max': 3200.0}, {'current': 1423.034, 'min': 1200.0, 'max': 3200.0}, {'current': 1619.743, 'min': 1200.0, 'max': 3200.0}, {'current': 2210.862, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.284, 'min': 1200.0, 'max': 3200.0}, {'current': 1385.111, 'min': 1200.0, 'max': 3200.0}, {'current': 2084.127, 'min': 1200.0, 'max': 3200.0}, {'current': 1356.484, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.686, 'min': 1200.0, 'max': 3200.0}, {'current': 2127.223, 'min': 1200.0, 'max': 3200.0}], 'disk': {'/': {'total': 233.67147827148438, 'used': 19.305164337158203}}, 'gpu': 'Tesla M40 24GB', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla M40 24GB', 'memory_total': 24159191040}], 'memory': {'total': 251.79465103149414}}
+2024-03-20 03:47:03,986 INFO    HandlerThread:258106 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-20 03:47:03,987 INFO    HandlerThread:258106 [system_monitor.py:probe():227] Publishing system info
+2024-03-20 03:47:03,987 DEBUG   HandlerThread:258106 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-03-20 03:47:04,832 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/conda-environment.yaml
+2024-03-20 03:47:09,968 DEBUG   HandlerThread:258106 [system_info.py:_save_conda():219] Saving conda packages done
+2024-03-20 03:47:09,970 INFO    HandlerThread:258106 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-20 03:47:09,997 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:47:09,997 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: keepalive
+2024-03-20 03:47:09,998 DEBUG   SenderThread:258106 [sender.py:send():378] send: files
+2024-03-20 03:47:09,998 INFO    SenderThread:258106 [sender.py:_save_file():1365] saving file wandb-metadata.json with policy now
+2024-03-20 03:47:10,344 INFO    wandb-upload_0:258106 [upload_job.py:push():131] Uploaded file /tmp/tmpkj81zojewandb/p2hqitp0-wandb-metadata.json
+2024-03-20 03:47:10,426 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-20 03:47:10,426 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: python_packages
+2024-03-20 03:47:10,427 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:47:10,428 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:47:10,431 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:47:10,539 DEBUG   SenderThread:258106 [sender.py:send():378] send: telemetry
+2024-03-20 03:47:10,539 DEBUG   SenderThread:258106 [sender.py:send():378] send: config
+2024-03-20 03:47:10,540 DEBUG   SenderThread:258106 [sender.py:send():378] send: metric
+2024-03-20 03:47:10,541 DEBUG   SenderThread:258106 [sender.py:send():378] send: telemetry
+2024-03-20 03:47:10,541 DEBUG   SenderThread:258106 [sender.py:send():378] send: metric
+2024-03-20 03:47:10,541 WARNING SenderThread:258106 [sender.py:send_metric():1316] Seen metric with glob (shouldn't happen)
+2024-03-20 03:47:10,541 DEBUG   SenderThread:258106 [sender.py:send():378] send: telemetry
+2024-03-20 03:47:10,833 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/conda-environment.yaml
+2024-03-20 03:47:10,834 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/requirements.txt
+2024-03-20 03:47:10,834 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/wandb-metadata.json
+2024-03-20 03:47:10,835 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/output.log
+2024-03-20 03:47:12,835 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/output.log
+2024-03-20 03:47:14,697 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:47:14,871 DEBUG   SenderThread:258106 [sender.py:send():378] send: exit
+2024-03-20 03:47:14,871 INFO    SenderThread:258106 [sender.py:send_exit():585] handling exit code: 255
+2024-03-20 03:47:14,872 INFO    SenderThread:258106 [sender.py:send_exit():587] handling runtime: 10
+2024-03-20 03:47:14,875 INFO    SenderThread:258106 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:47:14,875 INFO    SenderThread:258106 [sender.py:send_exit():593] send defer
+2024-03-20 03:47:14,876 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:14,876 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-20 03:47:14,876 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:14,876 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-03-20 03:47:14,876 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 1
+2024-03-20 03:47:14,877 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:14,877 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-20 03:47:14,877 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:14,877 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-03-20 03:47:14,877 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 2
+2024-03-20 03:47:14,878 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:14,878 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-20 03:47:14,878 INFO    HandlerThread:258106 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-20 03:47:14,878 DEBUG   SystemMonitor:258106 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-20 03:47:14,878 INFO    HandlerThread:258106 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-20 03:47:14,879 DEBUG   SystemMonitor:258106 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-20 03:47:14,879 DEBUG   SystemMonitor:258106 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-20 03:47:14,879 INFO    HandlerThread:258106 [interfaces.py:finish():202] Joined disk monitor
+2024-03-20 03:47:14,938 INFO    HandlerThread:258106 [interfaces.py:finish():202] Joined gpu monitor
+2024-03-20 03:47:14,938 INFO    HandlerThread:258106 [interfaces.py:finish():202] Joined memory monitor
+2024-03-20 03:47:14,939 INFO    HandlerThread:258106 [interfaces.py:finish():202] Joined network monitor
+2024-03-20 03:47:14,939 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:14,940 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-03-20 03:47:14,940 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 3
+2024-03-20 03:47:14,940 DEBUG   SenderThread:258106 [sender.py:send():378] send: stats
+2024-03-20 03:47:14,940 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:14,941 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-20 03:47:14,941 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:14,941 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-03-20 03:47:14,941 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 4
+2024-03-20 03:47:14,942 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:14,942 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-20 03:47:14,942 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:14,942 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-03-20 03:47:14,942 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 5
+2024-03-20 03:47:14,943 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:14,943 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-20 03:47:14,943 DEBUG   SenderThread:258106 [sender.py:send():378] send: summary
+2024-03-20 03:47:15,011 INFO    SenderThread:258106 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:47:15,011 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:15,011 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-03-20 03:47:15,011 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 6
+2024-03-20 03:47:15,011 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:15,012 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-20 03:47:15,012 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:15,012 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-03-20 03:47:15,017 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:47:15,348 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 7
+2024-03-20 03:47:15,349 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:15,349 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-20 03:47:15,349 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:15,349 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-03-20 03:47:15,838 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/config.yaml
+2024-03-20 03:47:15,838 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/wandb-summary.json
+2024-03-20 03:47:15,871 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:47:16,579 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 8
+2024-03-20 03:47:16,579 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:47:16,580 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:16,580 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-20 03:47:16,581 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:16,581 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-03-20 03:47:16,581 INFO    SenderThread:258106 [job_builder.py:build():298] Attempting to build job artifact
+2024-03-20 03:47:16,584 INFO    SenderThread:258106 [job_builder.py:_get_source_type():439] no source found
+2024-03-20 03:47:16,584 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 9
+2024-03-20 03:47:16,584 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:16,584 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-20 03:47:16,585 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:16,585 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-03-20 03:47:16,585 INFO    SenderThread:258106 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-20 03:47:16,839 INFO    Thread-12 :258106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/output.log
+2024-03-20 03:47:16,840 INFO    SenderThread:258106 [dir_watcher.py:finish():388] scan: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files
+2024-03-20 03:47:16,841 INFO    SenderThread:258106 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/config.yaml config.yaml
+2024-03-20 03:47:16,841 INFO    SenderThread:258106 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/conda-environment.yaml conda-environment.yaml
+2024-03-20 03:47:16,845 INFO    SenderThread:258106 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/wandb-metadata.json wandb-metadata.json
+2024-03-20 03:47:16,845 INFO    SenderThread:258106 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/requirements.txt requirements.txt
+2024-03-20 03:47:16,850 INFO    SenderThread:258106 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/output.log output.log
+2024-03-20 03:47:16,854 INFO    SenderThread:258106 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/wandb-summary.json wandb-summary.json
+2024-03-20 03:47:16,859 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 10
+2024-03-20 03:47:16,863 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:16,863 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-20 03:47:16,864 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:16,864 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-03-20 03:47:16,864 INFO    SenderThread:258106 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-20 03:47:16,872 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:47:16,872 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:47:17,049 INFO    wandb-upload_0:258106 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/config.yaml
+2024-03-20 03:47:17,155 INFO    wandb-upload_2:258106 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/requirements.txt
+2024-03-20 03:47:17,165 INFO    wandb-upload_1:258106 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/conda-environment.yaml
+2024-03-20 03:47:17,175 INFO    wandb-upload_3:258106 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/output.log
+2024-03-20 03:47:17,176 INFO    wandb-upload_4:258106 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/files/wandb-summary.json
+2024-03-20 03:47:17,377 INFO    Thread-11 :258106 [sender.py:transition_state():613] send defer: 11
+2024-03-20 03:47:17,378 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:17,378 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-20 03:47:17,378 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:17,378 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-03-20 03:47:17,378 INFO    SenderThread:258106 [file_pusher.py:join():178] waiting for file pusher
+2024-03-20 03:47:17,379 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 12
+2024-03-20 03:47:17,379 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:17,379 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-20 03:47:17,379 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:17,380 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-03-20 03:47:17,380 INFO    SenderThread:258106 [file_stream.py:finish():595] file stream finish called
+2024-03-20 03:47:17,434 INFO    SenderThread:258106 [file_stream.py:finish():599] file stream finish is done
+2024-03-20 03:47:17,434 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 13
+2024-03-20 03:47:17,434 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:17,435 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-20 03:47:17,435 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:17,435 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-03-20 03:47:17,435 INFO    SenderThread:258106 [sender.py:transition_state():613] send defer: 14
+2024-03-20 03:47:17,436 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:47:17,436 DEBUG   SenderThread:258106 [sender.py:send():378] send: final
+2024-03-20 03:47:17,436 INFO    HandlerThread:258106 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-20 03:47:17,436 DEBUG   SenderThread:258106 [sender.py:send():378] send: footer
+2024-03-20 03:47:17,437 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:47:17,437 INFO    SenderThread:258106 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-03-20 03:47:17,438 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:47:17,438 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:47:17,439 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:47:17,440 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: server_info
+2024-03-20 03:47:17,440 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-20 03:47:17,440 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:47:17,440 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-20 03:47:17,441 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:47:17,441 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: server_info
+2024-03-20 03:47:17,446 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: job_info
+2024-03-20 03:47:17,502 DEBUG   SenderThread:258106 [sender.py:send_request():405] send_request: job_info
+2024-03-20 03:47:17,503 INFO    MainThread:258106 [wandb_run.py:_footer_history_summary_info():3851] rendering history
+2024-03-20 03:47:17,503 INFO    MainThread:258106 [wandb_run.py:_footer_history_summary_info():3883] rendering summary
+2024-03-20 03:47:17,503 INFO    MainThread:258106 [wandb_run.py:_footer_sync_info():3810] logging synced files
+2024-03-20 03:47:17,504 DEBUG   HandlerThread:258106 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-20 03:47:17,504 INFO    HandlerThread:258106 [handler.py:finish():869] shutting down handler
+2024-03-20 03:47:18,446 INFO    WriterThread:258106 [datastore.py:close():296] close: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_034703-u2vmszn9/run-u2vmszn9.wandb
+2024-03-20 03:47:18,503 INFO    SenderThread:258106 [sender.py:finish():1521] shutting down sender
+2024-03-20 03:47:18,503 INFO    SenderThread:258106 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-20 03:47:18,503 INFO    SenderThread:258106 [file_pusher.py:join():178] waiting for file pusher

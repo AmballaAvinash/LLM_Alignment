@@ -1,0 +1,369 @@
+  0%|                                                                                       | 0/200 [00:00<?, ?it/s]/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/torch/utils/checkpoint.py:31: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn("None of the inputs have requires_grad=True. Gradients will be None")
+  0%|▍                                                                              | 1/200 [00:04<14:37,  4.41s/it]
+
+
+
+
+
+
+
+
+  5%|███▉                                                                          | 10/200 [00:21<05:36,  1.77s/it]
+{'loss': 1.9105, 'grad_norm': 0.6672242283821106, 'learning_rate': 4.9748082755013934e-05, 'epoch': 0.1}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.06s/it]
+
+
+
+
+
+
+
+ 10%|███████▊                                                                      | 20/200 [01:31<05:50,  1.95s/it]
+{'loss': 1.8524, 'grad_norm': 1.2144345045089722, 'learning_rate': 4.8883773787879873e-05, 'epoch': 0.2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.07s/it]
+
+
+
+
+
+
+
+
+ 15%|███████████▋                                                                  | 30/200 [02:45<07:47,  2.75s/it]
+{'loss': 1.9012, 'grad_norm': 0.9546415209770203, 'learning_rate': 4.742545397468659e-05, 'epoch': 0.3}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.07s/it]
+
+
+
+
+
+
+
+
+ 20%|███████████████▌                                                              | 40/200 [03:57<05:50,  2.19s/it]
+{'loss': 1.8312, 'grad_norm': 1.7837599515914917, 'learning_rate': 4.540939303535998e-05, 'epoch': 0.4}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.07s/it]
+
+
+
+
+
+ 24%|███████████████████                                                           | 49/200 [05:04<05:14,  2.08s/it]
+ 25%|███████████████████▌                                                          | 50/200 [05:05<04:19,  1.73s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 25/25 [00:54<00:00,  2.04s/it]
+
+
+
+
+
+
+
+
+
+ 30%|███████████████████████                                                       | 59/200 [06:19<06:28,  2.75s/it]
+ 30%|███████████████████████▍                                                      | 60/200 [06:21<05:39,  2.42s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 25/25 [00:54<00:00,  2.05s/it]
+
+
+
+
+
+
+
+ 34%|██████████████████████████▉                                                   | 69/200 [07:29<04:57,  2.27s/it]
+ 35%|███████████████████████████▎                                                  | 70/200 [07:31<04:11,  1.94s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 25/25 [00:54<00:00,  2.04s/it]
+
+
+
+
+
+
+
+
+ 40%|███████████████████████████████▏                                              | 80/200 [08:44<05:22,  2.69s/it]
+{'loss': 1.9484, 'grad_norm': 1.965509295463562, 'learning_rate': 3.2950288405980956e-05, 'epoch': 0.8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.07s/it]
+
+
+
+
+
+
+
+
+
+ 45%|███████████████████████████████████                                           | 90/200 [09:56<04:02,  2.21s/it]
+{'loss': 1.8846, 'grad_norm': 2.5954034328460693, 'learning_rate': 2.9125108865469987e-05, 'epoch': 0.9}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████████████████████████████████████████▊   | 24/25 [00:52<00:02,  2.07s/it]
+
+
+
+
+
+ 49%|██████████████████████████████████████▏                                       | 98/200 [11:02<04:21,  2.56s/it]
+
+ 50%|██████████████████████████████████████▌                                      | 100/200 [11:04<02:58,  1.78s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  File "sft_trainer.py", line 284, in <module>
+    SFT(input_args)
+  File "sft_trainer.py", line 209, in SFT
+    trainer.train()
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/trl/trainer/sft_trainer.py", line 360, in train
+    output = super().train(*args, **kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2049, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, grad_norm, model, trial, epoch, ignore_keys_for_eval)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2423, in _maybe_log_save_evaluate
+    self._save_checkpoint(model, trial, metrics=metrics)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 2499, in _save_checkpoint
+    self.save_model(staging_output_dir, _internal_call=True)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 3016, in save_model
+    self._save(output_dir)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/transformers/trainer.py", line 3089, in _save
+    self.model.save_pretrained(
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/peft_model.py", line 210, in save_pretrained
+    self.create_or_update_model_card(save_directory)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/peft/peft_model.py", line 788, in create_or_update_model_card
+    card = ModelCard.load(filename) if os.path.exists(filename) else ModelCard.from_template(ModelCardData())
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/huggingface_hub/repocard.py", line 407, in from_template
+    return super().from_template(card_data, template_path, **template_kwargs)
+  File "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/lib/python3.8/site-packages/huggingface_hub/repocard.py", line 318, in from_template
+    raise ImportError(
+ImportError: Using RepoCard.from_template requires Jinja2 to be installed. Please install it with `pip install Jinja2`.
+{'eval_loss': 1.8944330215454102, 'eval_runtime': 56.3264, 'eval_samples_per_second': 3.551, 'eval_steps_per_second': 0.444, 'epoch': 1.0}

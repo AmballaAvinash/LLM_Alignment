@@ -1,0 +1,931 @@
+2024-03-20 02:59:53,824 INFO    StreamThr :243533 [internal.py:wandb_internal():86] W&B internal server running at pid: 243533, started at: 2024-03-20 02:59:53.823920
+2024-03-20 02:59:53,826 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status
+2024-03-20 02:59:53,834 INFO    WriterThread:243533 [datastore.py:open_for_write():87] open: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/run-f2capsu3.wandb
+2024-03-20 02:59:53,835 DEBUG   SenderThread:243533 [sender.py:send():378] send: header
+2024-03-20 02:59:53,835 DEBUG   SenderThread:243533 [sender.py:send():378] send: run
+2024-03-20 02:59:54,106 INFO    SenderThread:243533 [dir_watcher.py:__init__():211] watching files in: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files
+2024-03-20 02:59:54,106 INFO    SenderThread:243533 [sender.py:_start_run_threads():1099] run started: f2capsu3 with start time 1710903593.825764
+2024-03-20 02:59:54,119 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: check_version
+2024-03-20 02:59:54,120 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: check_version
+2024-03-20 02:59:54,242 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: run_start
+2024-03-20 02:59:54,272 DEBUG   HandlerThread:243533 [system_info.py:__init__():26] System info init
+2024-03-20 02:59:54,272 DEBUG   HandlerThread:243533 [system_info.py:__init__():41] System info init done
+2024-03-20 02:59:54,272 INFO    HandlerThread:243533 [system_monitor.py:start():194] Starting system monitor
+2024-03-20 02:59:54,272 INFO    SystemMonitor:243533 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-20 02:59:54,273 INFO    HandlerThread:243533 [system_monitor.py:probe():214] Collecting system info
+2024-03-20 02:59:54,274 INFO    SystemMonitor:243533 [interfaces.py:start():190] Started cpu monitoring
+2024-03-20 02:59:54,274 INFO    SystemMonitor:243533 [interfaces.py:start():190] Started disk monitoring
+2024-03-20 02:59:54,275 INFO    SystemMonitor:243533 [interfaces.py:start():190] Started gpu monitoring
+2024-03-20 02:59:54,276 INFO    SystemMonitor:243533 [interfaces.py:start():190] Started memory monitoring
+2024-03-20 02:59:54,279 INFO    SystemMonitor:243533 [interfaces.py:start():190] Started network monitoring
+2024-03-20 02:59:54,287 DEBUG   HandlerThread:243533 [system_info.py:probe():150] Probing system
+2024-03-20 02:59:54,293 DEBUG   HandlerThread:243533 [gitlib.py:_init_repo():56] git repository is invalid
+2024-03-20 02:59:54,293 DEBUG   HandlerThread:243533 [system_info.py:probe():198] Probing system done
+2024-03-20 02:59:54,293 DEBUG   HandlerThread:243533 [system_monitor.py:probe():223] {'os': 'Linux-5.4.0-170-generic-x86_64-with-glibc2.17', 'python': '3.8.18', 'heartbeatAt': '2024-03-20T02:59:54.287584', 'startedAt': '2024-03-20T02:59:53.810436', 'docker': None, 'cuda': None, 'args': ('--model_name_or_path', 'google/gemma-2b', '--per_device_train_batch_size', '8', '--per_device_eval_batch_size', '8', '--gradient_accumulation_steps', '1', '--learning_rate', '5e-5', '--report_to', 'wandb', '--run_name', 'SFT_training', '--max_seq_length', '1024', '--num_train_epochs', '2', '--evaluation_strategy', 'steps', '--eval_steps', '10', '--logging_strategy', 'steps', '--log_steps', '10', '--logging_first_step', '--save_strategy', 'epoch', '--save_steps', '1', '--lora_rank', '8', '--lora_alpha', '32', '--lora_dropout', '0.1', '--output_dir', './saved-models/experiment'), 'state': 'running', 'program': 'sft_trainer.py', 'codePathLocal': 'sft_trainer.py', 'codePath': 'sft_trainer.py', 'host': 'gypsum-gpu016', 'username': 'dsaluru_umass_edu', 'executable': '/home/dsaluru_umass_edu/.conda/envs/llm_alignment/bin/python', 'cpu_count': 12, 'cpu_count_logical': 12, 'cpu_freq': {'current': 1588.7179166666665, 'min': 1200.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 2931.991, 'min': 1200.0, 'max': 3200.0}, {'current': 2011.174, 'min': 1200.0, 'max': 3200.0}, {'current': 1578.45, 'min': 1200.0, 'max': 3200.0}, {'current': 1654.818, 'min': 1200.0, 'max': 3200.0}, {'current': 1678.401, 'min': 1200.0, 'max': 3200.0}, {'current': 2024.498, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.897, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.234, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.702, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.614, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.369, 'min': 1200.0, 'max': 3200.0}, {'current': 1197.467, 'min': 1200.0, 'max': 3200.0}], 'disk': {'/': {'total': 233.67147827148438, 'used': 19.305343627929688}}, 'gpu': 'Tesla M40 24GB', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla M40 24GB', 'memory_total': 24159191040}], 'memory': {'total': 251.79465103149414}}
+2024-03-20 02:59:54,293 INFO    HandlerThread:243533 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-20 02:59:54,293 INFO    HandlerThread:243533 [system_monitor.py:probe():227] Publishing system info
+2024-03-20 02:59:54,293 DEBUG   HandlerThread:243533 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-03-20 02:59:55,111 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/conda-environment.yaml
+2024-03-20 02:59:58,593 DEBUG   HandlerThread:243533 [system_info.py:_save_conda():219] Saving conda packages done
+2024-03-20 02:59:58,595 INFO    HandlerThread:243533 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-20 02:59:58,610 DEBUG   SenderThread:243533 [sender.py:send():378] send: files
+2024-03-20 02:59:58,610 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-metadata.json with policy now
+2024-03-20 02:59:58,843 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-20 02:59:58,844 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: python_packages
+2024-03-20 02:59:58,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 02:59:58,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 02:59:58,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 02:59:58,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 02:59:59,030 DEBUG   SenderThread:243533 [sender.py:send():378] send: telemetry
+2024-03-20 02:59:59,030 DEBUG   SenderThread:243533 [sender.py:send():378] send: config
+2024-03-20 02:59:59,032 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 02:59:59,032 DEBUG   SenderThread:243533 [sender.py:send():378] send: telemetry
+2024-03-20 02:59:59,032 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 02:59:59,032 WARNING SenderThread:243533 [sender.py:send_metric():1316] Seen metric with glob (shouldn't happen)
+2024-03-20 02:59:59,033 DEBUG   SenderThread:243533 [sender.py:send():378] send: telemetry
+2024-03-20 02:59:59,111 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/conda-environment.yaml
+2024-03-20 02:59:59,111 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 02:59:59,111 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-metadata.json
+2024-03-20 02:59:59,111 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/requirements.txt
+2024-03-20 02:59:59,271 INFO    wandb-upload_0:243533 [upload_job.py:push():131] Uploaded file /tmp/tmpuqt38yxjwandb/wbzj70kd-wandb-metadata.json
+2024-03-20 03:00:01,112 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:03,269 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:00:03,272 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:00:03,272 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:00:03,272 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:00:03,273 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:00:03,273 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:00:03,273 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:00:03,277 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:00:04,115 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_created():271] file/dir created: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:00:04,278 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:05,116 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:06,117 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:07,118 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:09,119 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:09,580 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:11,121 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:13,122 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:13,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:00:13,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:00:13,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:00:14,966 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:15,123 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:17,125 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:19,126 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:20,169 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:20,169 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:00:20,171 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:00:20,172 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:00:20,251 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:00:21,128 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:21,128 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:00:22,128 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:23,129 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:25,221 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:26,132 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/config.yaml
+2024-03-20 03:00:28,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:00:28,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:00:28,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:00:29,134 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:30,356 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:31,135 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:33,137 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:35,139 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:36,076 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:37,143 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:39,149 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:41,154 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:41,485 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:43,844 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:00:43,845 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:00:43,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:00:44,157 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:46,158 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:46,726 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:50,160 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:51,757 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:52,162 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:54,163 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:54,279 DEBUG   SystemMonitor:243533 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-20 03:00:54,281 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:00:56,165 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:57,638 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:00:58,166 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:00:58,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:00:58,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:00:58,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:01:00,168 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:02,169 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:03,439 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:04,171 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:08,173 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:08,979 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:10,175 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:12,176 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:13,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:01:13,845 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:01:13,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:01:14,189 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:14,972 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:16,190 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:16,708 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:01:16,711 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:01:16,712 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:01:16,712 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:01:16,713 DEBUG   SenderThread:243533 [sender.py:send():378] send: metric
+2024-03-20 03:01:16,713 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:01:16,714 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:01:16,715 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:01:17,191 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:01:18,192 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:20,193 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:20,796 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:22,195 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:24,203 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:24,282 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:01:26,204 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:26,585 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:28,206 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:28,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:01:28,845 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:01:28,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:01:30,207 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:30,459 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:01:30,461 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:01:30,461 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:01:30,678 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:01:31,208 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:01:32,208 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:32,510 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:33,209 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/config.yaml
+2024-03-20 03:01:34,210 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:36,211 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:38,027 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:40,214 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:42,216 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:43,814 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:43,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:01:43,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:01:43,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:01:44,217 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:46,219 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:48,220 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:49,028 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:50,222 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:52,223 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:54,225 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:54,283 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:01:54,283 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:01:56,227 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:58,228 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:01:58,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:01:58,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:01:58,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:01:59,381 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:02,231 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:04,233 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:05,003 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:06,234 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:08,236 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:10,237 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:10,339 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:12,238 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:13,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:02:13,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:02:13,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:02:14,240 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:16,104 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:16,241 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:20,244 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:21,679 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:22,245 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:24,247 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:24,284 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:02:26,248 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:26,656 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:02:26,658 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:02:26,658 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:02:26,661 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:02:27,249 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:02:27,668 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:28,249 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:28,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:02:28,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:02:28,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:02:30,251 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:32,252 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:32,914 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:34,254 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:38,116 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:38,257 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:40,258 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:42,259 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:43,336 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:43,845 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:02:43,846 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:02:43,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:02:44,261 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:44,372 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:02:44,374 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:02:44,374 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:02:44,897 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:02:45,262 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:02:46,262 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:48,264 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:48,384 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:50,265 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:53,902 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:02:54,268 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:54,285 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:02:56,270 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:58,271 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:02:58,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:02:58,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:02:58,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:02:58,932 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:00,273 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:02,274 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:04,144 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:04,276 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:06,277 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:08,279 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:09,416 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:10,280 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:12,281 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:13,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:03:13,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:03:13,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:03:14,283 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:15,004 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:18,286 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:20,287 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:20,415 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:22,288 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:24,285 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:03:24,290 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:26,260 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:26,291 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:28,292 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:28,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:03:28,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:03:28,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:03:30,293 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:31,827 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:34,296 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:36,297 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:37,479 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:38,299 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:40,300 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:40,612 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:03:40,614 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:03:40,615 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:03:40,618 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:03:41,301 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:03:42,302 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:42,528 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:43,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:03:43,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:03:43,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:03:44,303 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:46,305 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:47,759 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:48,306 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:50,307 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:52,309 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:53,379 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:54,286 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:03:54,310 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:56,312 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:56,672 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:03:56,674 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:03:56,674 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:03:56,853 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:03:57,312 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:03:58,313 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:03:58,725 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:03:58,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:03:58,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:03:58,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:04:00,314 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:02,315 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:03,841 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:06,318 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:08,319 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:09,266 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:10,321 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:12,322 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:13,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:04:13,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:04:13,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:04:14,290 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:14,324 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:16,325 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:18,327 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:19,629 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:20,328 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:22,329 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:24,287 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:04:24,331 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:25,288 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:28,334 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:28,846 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:04:28,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:04:28,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:04:30,335 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:31,279 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:32,336 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:34,338 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:36,339 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:36,615 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:38,340 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:40,342 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:42,343 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:42,378 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:43,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:04:43,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:04:43,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:04:46,346 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:47,971 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:48,347 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:50,349 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:52,350 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:52,944 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:04:52,947 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:04:52,947 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:04:52,949 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:04:53,351 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:04:53,950 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:04:54,288 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:04:54,351 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:56,353 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:58,354 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:04:58,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:04:58,847 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:04:58,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:04:59,011 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:00,356 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:02,357 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:04,067 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:04,067 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:05:04,069 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:05:04,070 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:05:04,071 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:05:04,359 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:04,359 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:05:06,360 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:09,225 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:10,363 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:13,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:05:13,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:05:13,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:05:14,366 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:14,992 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:16,367 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:18,368 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:20,370 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:20,439 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:24,289 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:05:24,372 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:26,001 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:26,374 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:28,375 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:28,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:05:28,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:05:28,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:05:30,377 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:31,627 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:32,378 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:34,379 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:36,380 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:37,228 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:40,383 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:42,370 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:42,384 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:43,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:05:43,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:05:43,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:05:44,386 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:46,387 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:47,984 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:48,388 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:50,390 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:52,391 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:53,417 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:05:54,290 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:05:54,393 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:56,394 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:58,396 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:05:58,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:05:58,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:05:58,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:05:58,951 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:00,343 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:06:00,344 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:06:00,345 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:06:00,352 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:06:00,397 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:00,397 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:06:02,398 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:04,356 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:04,400 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:08,403 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:09,741 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:10,404 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:12,405 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:13,847 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:06:13,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:06:13,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:06:14,407 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:14,998 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:16,408 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:18,410 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:20,208 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:20,209 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:06:20,211 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:06:20,211 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:06:20,216 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:06:20,411 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:20,411 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:06:22,412 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:24,291 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:06:25,366 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:26,415 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:28,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:06:28,849 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:06:28,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:06:30,418 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:30,820 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:32,419 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:34,420 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:36,422 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:36,588 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:40,424 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:42,026 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:42,426 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:43,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:06:43,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:06:43,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:06:44,427 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:46,429 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:47,777 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:48,430 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:50,432 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:52,645 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:53,377 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:54,292 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:06:56,648 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:58,520 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:06:58,649 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:06:58,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:06:58,848 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:06:58,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:07:00,651 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:02,652 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:04,139 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:04,654 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:06,655 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:09,573 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:10,658 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:12,659 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:13,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:07:13,849 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:07:13,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:07:14,661 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:14,989 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:16,528 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:07:16,530 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:07:16,531 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:07:16,533 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:07:16,662 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:16,663 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:07:18,664 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:20,597 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:20,665 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:22,666 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:24,293 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:07:24,668 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:26,268 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:26,669 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:28,671 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:28,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:07:28,849 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:07:28,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:07:29,949 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:07:29,951 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:07:29,952 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:07:29,953 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:07:30,672 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:30,673 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:07:32,000 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:32,674 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:36,676 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:37,110 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:38,678 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:40,679 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:42,543 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:42,681 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:43,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:07:43,850 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:07:43,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:07:44,682 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:46,683 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:47,558 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:48,684 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:52,687 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:52,897 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:54,294 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:07:54,689 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:56,690 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:58,521 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:07:58,691 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:07:58,848 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:07:58,849 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:07:58,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:08:00,693 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:02,694 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:03,564 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:04,695 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:08,698 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:09,275 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:10,699 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:12,701 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:13,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:08:13,849 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:08:13,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:08:14,674 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:14,702 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:16,704 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:18,705 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:20,308 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:20,706 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:21,910 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:23,913 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:24,295 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:08:25,916 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:26,071 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:26,232 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:08:26,234 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:08:26,234 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:08:26,237 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:08:26,917 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:08:27,918 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:28,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:08:28,849 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:08:28,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:08:29,921 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:31,311 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:31,924 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:36,323 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:36,928 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:38,929 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:40,931 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:41,956 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:42,932 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:42,947 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:08:42,949 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:08:42,950 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:08:43,610 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:08:43,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:08:43,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:08:43,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:08:43,933 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:08:44,934 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:45,934 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:46,935 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:46,995 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:48,937 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:52,516 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:52,939 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:54,296 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:08:54,941 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:56,942 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:08:58,316 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:08:58,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:08:58,850 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:08:58,853 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:08:58,943 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:00,945 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:02,946 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:03,752 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:03,976 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:05,977 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:07,980 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:09,015 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:09,982 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:13,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:09:13,850 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:09:13,853 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:09:14,018 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:14,986 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:16,987 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:18,989 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:20,006 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:20,990 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:22,992 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:24,296 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:09:24,993 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:25,841 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:26,995 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:28,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:09:28,850 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:09:28,853 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:09:28,996 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:31,406 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:32,998 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:35,000 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:37,001 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:37,047 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:39,003 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:39,168 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:09:39,171 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:09:39,171 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:09:39,173 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:09:40,003 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:40,004 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:09:41,004 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:42,067 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:43,005 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:43,849 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:09:43,850 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:09:43,853 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:09:45,007 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:47,008 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:47,476 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:49,010 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:51,011 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:52,711 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:53,012 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:54,297 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:09:55,014 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:55,514 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:09:55,515 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:09:55,516 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:09:55,518 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:09:56,014 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:09:57,015 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:58,016 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:09:58,561 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:09:58,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:09:58,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:09:58,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:09:59,016 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:01,018 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:04,103 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:05,021 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:07,022 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:09,024 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:09,897 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:11,025 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:13,027 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:13,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:10:13,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:10:13,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:10:14,939 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:15,028 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:17,029 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:19,031 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:20,613 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:21,032 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:24,298 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:10:25,035 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:26,501 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:27,036 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:28,106 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:28,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:10:28,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:10:28,854 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:10:30,109 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:31,617 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:33,111 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:35,112 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:37,113 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:37,465 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:39,115 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:43,038 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:43,117 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:43,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:10:43,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:10:43,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:10:45,119 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:47,120 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:48,693 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:49,122 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:51,123 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:51,795 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:10:51,797 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:10:51,801 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:10:51,803 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:10:52,124 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:10:53,124 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:54,125 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:54,189 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:10:54,299 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:10:55,126 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:57,127 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:58,850 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:10:58,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:10:58,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:10:59,128 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:10:59,214 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:01,130 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:03,132 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:03,359 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:11:03,361 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:11:03,361 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:11:03,421 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:11:04,132 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:04,133 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:11:04,403 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:05,133 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:07,135 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:09,136 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:09,516 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:13,139 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:13,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:11:13,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:11:13,852 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:11:14,942 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:15,140 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:17,141 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:19,143 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:20,733 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:21,144 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:23,146 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:24,300 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:11:25,147 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:26,298 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:27,148 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:28,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:11:28,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:11:28,854 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:11:29,150 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:31,151 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:31,968 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:35,153 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:36,974 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:37,155 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:39,156 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:41,158 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:42,691 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:43,159 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:43,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:11:43,851 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:11:43,854 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:11:45,161 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:47,162 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:48,094 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:51,165 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:53,166 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:53,732 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:54,301 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:11:55,167 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:57,169 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:58,851 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-20 03:11:58,852 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: stop_status
+2024-03-20 03:11:58,854 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:11:59,014 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:59,170 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:11:59,689 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: partial_history
+2024-03-20 03:11:59,691 DEBUG   SenderThread:243533 [sender.py:send():378] send: history
+2024-03-20 03:11:59,692 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: summary_record
+2024-03-20 03:11:59,694 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:11:59,706 DEBUG   SenderThread:243533 [sender.py:send():378] send: exit
+2024-03-20 03:11:59,706 INFO    SenderThread:243533 [sender.py:send_exit():585] handling exit code: 1
+2024-03-20 03:11:59,706 INFO    SenderThread:243533 [sender.py:send_exit():587] handling runtime: 725
+2024-03-20 03:11:59,749 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:11:59,750 INFO    SenderThread:243533 [sender.py:send_exit():593] send defer
+2024-03-20 03:11:59,750 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,750 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 0
+2024-03-20 03:11:59,751 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,751 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-03-20 03:11:59,751 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 1
+2024-03-20 03:11:59,751 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,751 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 1
+2024-03-20 03:11:59,752 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,752 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-03-20 03:11:59,752 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 2
+2024-03-20 03:11:59,752 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,752 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 2
+2024-03-20 03:11:59,753 INFO    HandlerThread:243533 [system_monitor.py:finish():203] Stopping system monitor
+2024-03-20 03:11:59,753 DEBUG   SystemMonitor:243533 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-20 03:11:59,753 DEBUG   SystemMonitor:243533 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-20 03:11:59,753 INFO    HandlerThread:243533 [interfaces.py:finish():202] Joined cpu monitor
+2024-03-20 03:11:59,755 INFO    HandlerThread:243533 [interfaces.py:finish():202] Joined disk monitor
+2024-03-20 03:11:59,806 INFO    HandlerThread:243533 [interfaces.py:finish():202] Joined gpu monitor
+2024-03-20 03:11:59,807 INFO    HandlerThread:243533 [interfaces.py:finish():202] Joined memory monitor
+2024-03-20 03:11:59,807 INFO    HandlerThread:243533 [interfaces.py:finish():202] Joined network monitor
+2024-03-20 03:11:59,808 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,808 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-03-20 03:11:59,808 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 3
+2024-03-20 03:11:59,808 DEBUG   SenderThread:243533 [sender.py:send():378] send: stats
+2024-03-20 03:11:59,808 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,809 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 3
+2024-03-20 03:11:59,809 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,809 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-03-20 03:11:59,810 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 4
+2024-03-20 03:11:59,810 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,810 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 4
+2024-03-20 03:11:59,810 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,811 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-03-20 03:11:59,811 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 5
+2024-03-20 03:11:59,811 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,811 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 5
+2024-03-20 03:11:59,812 DEBUG   SenderThread:243533 [sender.py:send():378] send: summary
+2024-03-20 03:11:59,880 INFO    SenderThread:243533 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-03-20 03:11:59,881 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,881 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-03-20 03:11:59,881 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 6
+2024-03-20 03:11:59,881 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,882 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 6
+2024-03-20 03:11:59,882 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,882 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-03-20 03:11:59,882 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 7
+2024-03-20 03:11:59,882 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: status_report
+2024-03-20 03:11:59,883 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:11:59,883 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 7
+2024-03-20 03:11:59,883 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:11:59,884 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-03-20 03:12:00,171 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:12:00,706 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:12:01,171 INFO    Thread-12 :243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:12:02,077 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 8
+2024-03-20 03:12:02,077 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:12:02,077 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:02,078 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 8
+2024-03-20 03:12:02,078 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:02,078 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-03-20 03:12:02,078 INFO    SenderThread:243533 [job_builder.py:build():298] Attempting to build job artifact
+2024-03-20 03:12:02,082 INFO    SenderThread:243533 [job_builder.py:_get_source_type():439] no source found
+2024-03-20 03:12:02,082 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 9
+2024-03-20 03:12:02,082 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:02,083 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 9
+2024-03-20 03:12:02,083 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:02,083 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-03-20 03:12:02,083 INFO    SenderThread:243533 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-03-20 03:12:02,173 INFO    SenderThread:243533 [dir_watcher.py:_on_file_modified():288] file/dir modified: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:12:02,173 INFO    SenderThread:243533 [dir_watcher.py:finish():388] scan: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files
+2024-03-20 03:12:02,173 INFO    SenderThread:243533 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/config.yaml config.yaml
+2024-03-20 03:12:02,174 INFO    SenderThread:243533 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/conda-environment.yaml conda-environment.yaml
+2024-03-20 03:12:02,178 INFO    SenderThread:243533 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-metadata.json wandb-metadata.json
+2024-03-20 03:12:02,179 INFO    SenderThread:243533 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/requirements.txt requirements.txt
+2024-03-20 03:12:02,183 INFO    SenderThread:243533 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log output.log
+2024-03-20 03:12:02,189 INFO    SenderThread:243533 [dir_watcher.py:finish():402] scan save: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json wandb-summary.json
+2024-03-20 03:12:02,193 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 10
+2024-03-20 03:12:02,194 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:02,194 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 10
+2024-03-20 03:12:02,198 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:02,198 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-03-20 03:12:02,198 INFO    SenderThread:243533 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-20 03:12:02,559 INFO    wandb-upload_0:243533 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/config.yaml
+2024-03-20 03:12:02,707 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:12:02,708 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:12:02,729 INFO    wandb-upload_1:243533 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/conda-environment.yaml
+2024-03-20 03:12:02,736 INFO    wandb-upload_4:243533 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/wandb-summary.json
+2024-03-20 03:12:02,739 INFO    wandb-upload_2:243533 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/requirements.txt
+2024-03-20 03:12:02,752 INFO    wandb-upload_3:243533 [upload_job.py:push():131] Uploaded file /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/files/output.log
+2024-03-20 03:12:02,953 INFO    Thread-11 :243533 [sender.py:transition_state():613] send defer: 11
+2024-03-20 03:12:02,953 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:02,953 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 11
+2024-03-20 03:12:02,954 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:02,954 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-03-20 03:12:02,954 INFO    SenderThread:243533 [file_pusher.py:join():178] waiting for file pusher
+2024-03-20 03:12:02,956 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 12
+2024-03-20 03:12:02,956 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:02,957 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 12
+2024-03-20 03:12:02,957 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:02,957 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-03-20 03:12:02,958 INFO    SenderThread:243533 [file_stream.py:finish():595] file stream finish called
+2024-03-20 03:12:03,240 INFO    SenderThread:243533 [file_stream.py:finish():599] file stream finish is done
+2024-03-20 03:12:03,240 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 13
+2024-03-20 03:12:03,240 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:03,241 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 13
+2024-03-20 03:12:03,241 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:03,241 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-03-20 03:12:03,242 INFO    SenderThread:243533 [sender.py:transition_state():613] send defer: 14
+2024-03-20 03:12:03,242 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: defer
+2024-03-20 03:12:03,242 DEBUG   SenderThread:243533 [sender.py:send():378] send: final
+2024-03-20 03:12:03,242 INFO    HandlerThread:243533 [handler.py:handle_request_defer():172] handle defer: 14
+2024-03-20 03:12:03,243 DEBUG   SenderThread:243533 [sender.py:send():378] send: footer
+2024-03-20 03:12:03,243 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: defer
+2024-03-20 03:12:03,243 INFO    SenderThread:243533 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-03-20 03:12:03,244 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:12:03,245 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: poll_exit
+2024-03-20 03:12:03,245 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:12:03,246 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: poll_exit
+2024-03-20 03:12:03,246 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: server_info
+2024-03-20 03:12:03,247 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: server_info
+2024-03-20 03:12:03,247 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: get_summary
+2024-03-20 03:12:03,252 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: sampled_history
+2024-03-20 03:12:03,252 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-20 03:12:03,253 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: job_info
+2024-03-20 03:12:03,302 DEBUG   SenderThread:243533 [sender.py:send_request():405] send_request: job_info
+2024-03-20 03:12:03,302 INFO    MainThread:243533 [wandb_run.py:_footer_history_summary_info():3851] rendering history
+2024-03-20 03:12:03,303 INFO    MainThread:243533 [wandb_run.py:_footer_history_summary_info():3883] rendering summary
+2024-03-20 03:12:03,304 INFO    MainThread:243533 [wandb_run.py:_footer_sync_info():3810] logging synced files
+2024-03-20 03:12:03,304 DEBUG   HandlerThread:243533 [handler.py:handle_request():146] handle_request: shutdown
+2024-03-20 03:12:03,304 INFO    HandlerThread:243533 [handler.py:finish():869] shutting down handler
+2024-03-20 03:12:04,254 INFO    WriterThread:243533 [datastore.py:close():296] close: /project/pi_hongyu_umass_edu/zonghai/clinical-llm-alignment/durga_sandeep/self_rewarding/LLM_Alignment/wandb/run-20240320_025953-f2capsu3/run-f2capsu3.wandb
+2024-03-20 03:12:04,302 INFO    SenderThread:243533 [sender.py:finish():1521] shutting down sender
+2024-03-20 03:12:04,303 INFO    SenderThread:243533 [file_pusher.py:finish():172] shutting down file pusher
+2024-03-20 03:12:04,303 INFO    SenderThread:243533 [file_pusher.py:join():178] waiting for file pusher

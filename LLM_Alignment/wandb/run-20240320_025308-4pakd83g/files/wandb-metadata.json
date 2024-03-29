@@ -1,0 +1,142 @@
+{
+    "os": "Linux-5.4.0-170-generic-x86_64-with-glibc2.17",
+    "python": "3.8.18",
+    "heartbeatAt": "2024-03-20T02:53:09.106747",
+    "startedAt": "2024-03-20T02:53:08.442757",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--model_name_or_path",
+        "google/gemma-2b",
+        "--per_device_train_batch_size",
+        "64",
+        "--per_device_eval_batch_size",
+        "64",
+        "--gradient_accumulation_steps",
+        "1",
+        "--learning_rate",
+        "5e-5",
+        "--report_to",
+        "wandb",
+        "--run_name",
+        "SFT_training",
+        "--max_seq_length",
+        "1024",
+        "--num_train_epochs",
+        "2",
+        "--evaluation_strategy",
+        "steps",
+        "--eval_steps",
+        "10",
+        "--logging_strategy",
+        "steps",
+        "--log_steps",
+        "10",
+        "--logging_first_step",
+        "--save_strategy",
+        "epoch",
+        "--save_steps",
+        "1",
+        "--lora_rank",
+        "8",
+        "--lora_alpha",
+        "32",
+        "--lora_dropout",
+        "0.1",
+        "--output_dir",
+        "./saved-models/experiment"
+    ],
+    "state": "running",
+    "program": "sft_trainer.py",
+    "codePathLocal": "sft_trainer.py",
+    "codePath": "sft_trainer.py",
+    "host": "gypsum-gpu016",
+    "username": "dsaluru_umass_edu",
+    "executable": "/home/dsaluru_umass_edu/.conda/envs/llm_alignment/bin/python",
+    "cpu_count": 12,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 1737.3102500000005,
+        "min": 1200.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2829.334,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1494.221,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1764.711,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1612.313,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1404.979,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1990.57,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2066.648,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1568.931,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1753.043,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1198.009,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1200.698,
+            "min": 1200.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1964.266,
+            "min": 1200.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 233.67147827148438,
+            "used": 19.305339813232422
+        }
+    },
+    "gpu": "Tesla M40 24GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla M40 24GB",
+            "memory_total": 24159191040
+        }
+    ],
+    "memory": {
+        "total": 251.79465103149414
+    }
+}
