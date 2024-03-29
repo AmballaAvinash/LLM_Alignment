@@ -19,7 +19,7 @@ from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 os.environ["TOKENIZERS_PARALLELISM"] = "false" # to avoid warning "Tokenizer deadlocks"
 
 # replace following with your own huggingface account key
-os.environ["HF_TOKEN"] = "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" # my huggingface key to access llama models
+os.environ["HF_TOKEN"] = "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" # my huggingface key to access llama models
 
 class SavePeftModelCallback(TrainerCallback):
     def on_save(
