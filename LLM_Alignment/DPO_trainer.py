@@ -50,9 +50,9 @@ class SavePeftModelCallback(TrainerCallback):
 def return_prompt_and_responses(samples):
     
         return {
-            "prompt": [
+            "prompt": 
                 "Question: " + samples["prompt"] + "\n\nAnswer: "
-            ],
+            ,
             "chosen": samples["response_0"] ,   # rated better than 1
             "rejected": samples["response_1"] , # rated worse than 0
         }
