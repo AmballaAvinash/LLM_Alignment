@@ -50,9 +50,9 @@ class SavePeftModelCallback(TrainerCallback):
 def return_prompt_and_responses(samples):
     
         return {
-            "prompt": [
+            "prompt": 
                 "Question: " + samples["prompt"] + "\n\nAnswer: "
-            ],
+            ,
             "chosen": samples["response_0"] ,   # rated better than 1
             "rejected": samples["response_1"] , # rated worse than 0
         }
@@ -168,7 +168,7 @@ def DPO(input_args):
         per_device_eval_batch_size=input_args.per_device_eval_batch_size,
         gradient_accumulation_steps=input_args.gradient_accumulation_steps,
         gradient_checkpointing=True,
-        group_by_length=True,
+        # group_by_length=True,
         num_train_epochs=input_args.num_train_epochs,
         learning_rate=input_args.learning_rate,
         optim="paged_adamw_32bit",
@@ -196,7 +196,6 @@ def DPO(input_args):
     
     train_dataset = train_dataset.map(
         return_prompt_and_responses,
-        batched=True,
         remove_columns=original_columns
     )
     
