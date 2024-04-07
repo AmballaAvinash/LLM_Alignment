@@ -19,14 +19,14 @@ from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 os.environ["TOKENIZERS_PARALLELISM"] = "false" # to avoid warning "Tokenizer deadlocks"
 
 # replace following with your own huggingface account key
-os.environ["HF_TOKEN"] = "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" # my huggingface key to access llama models
+os.environ["HF_TOKEN"] = "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" # my huggingface key to access llama models
 
 device = "cpu" # or "cuda" if you have a GPU
 if torch.cuda.is_available():
     device = 'cuda'
 
 
-output_dir = "./saved-models/experiment/merged_model"
+output_dir = "./saved-models/SFT/merged_model"
 
 tokenizer = AutoTokenizer.from_pretrained(output_dir, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
@@ -95,3 +95,8 @@ torch.cuda.empty_cache()
 i = 0
 print(text[i])
 print(outputs[i])
+
+
+
+
+# evaluation metrics

@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  2 22:53:44 2024
+
+@author: avinashamballa
+"""
+
 import os
 import gc
 import torch
@@ -38,20 +46,30 @@ class SavePeftModelCallback(TrainerCallback):
         torch.save({}, pytorch_model_path)
         return control
     
-def SFT(input_args):
+    
+def return_prompt_and_responses(samples):
+    
+        return {
+            "prompt": [
+                "Question: " + samples["prompt"] + "\n\nAnswer: "
+            ],
+            "chosen": samples["response_0"] ,   # rated better than 1
+            "rejected": samples["response_1"] , # rated worse than 0
+        }
+
+   
+    
+def DPO(input_args):
 
     base_model_id = input_args.model_name_or_path # f"MBZUAI/LaMini-GPT-124M"
-
+    
     print("########## Model name : ", base_model_id)
 
+    
+    sft_model_dir= "./saved-models/SFT/merged_model"
+
     #################################### Tokenizer ##############################################
-    tokenizer = AutoTokenizer.from_pretrained(
-        base_model_id,
-        padding_side="right",
-        add_eos_token=True,
-        add_bos_token=True,
-        trust_remote_code=True,
-    )
+    tokenizer = AutoTokenizer.from_pretrained(sft_model_dir, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.pad_token_id = tokenizer.eos_token_id
 
@@ -61,9 +79,12 @@ def SFT(input_args):
 
     train_dataset = dataset['train']
     test_dataset = dataset['test']
+    
+    original_columns = train_dataset.column_names
 
     train_dataset = train_dataset.to_pandas()
     test_dataset = test_dataset.to_pandas()
+    
 
     # considering only 1000 for now in training, 100 in testing (preference ranking)
     train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:1000]
@@ -95,7 +116,11 @@ def SFT(input_args):
         bnb_4bit_compute_dtype=torch.bfloat16
     )
 
-    model = AutoModelForCausalLM.from_pretrained(base_model_id, 
+
+    # model should be sft pretrained model
+    
+    
+    model = AutoModelForCausalLM.from_pretrained(sft_model_dir, 
                                                 quantization_config=bnb_config, 
                                                 device_map={"": 0},
                                                 use_cache=False)
@@ -130,8 +155,8 @@ def SFT(input_args):
         task_type="CAUSAL_LM",
     )
 
-    model = get_peft_model(model, config)
-    print("Model Loaded with LoRA config")
+    # model = get_peft_model(model, config)
+    # print("Model Loaded with LoRA config")
 
     # --gradient_checkpointing True, workers speed up processing,  grad accumulation - 8, 16, 22 (less memory)
 
@@ -167,45 +192,27 @@ def SFT(input_args):
         disable_tqdm=False
     )
 
-    ####################################### Data Collator #########################################
-    # adding instructions 
-    def formatting_prompts_func(examples):
-        output_text = []
-        for i in range(len(examples["prompt"])):
-            input_text = examples["prompt"][i]
-
-            # note that response_0 is safe response (we filtered the data based on that, viceversa can also be done)
-            response = examples["response_0"][i]
-
-            prompt = "### Instruction: Answer the following question, while the response provides accurate information and also adherence to ethical standards, respectfulness, avoidance of harmful or inappropriate content.\n\n ### Prompt: " + input_text + "\n### Response: " + response
-            prompt += " "+tokenizer.eos_token
-            output_text.append(prompt)
-
-        return output_text
+    ####################################### Data Formatting #########################################
     
-    # compute loss only for the summary, not for the prompt (conversation)
-    response_template = "### Response:"
-    collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer, mlm=False)
+    train_dataset = train_dataset.map(
+        return_prompt_and_responses,
+        remove_columns=original_columns
+    )
+    
     
     print("######### Output Directory : ", input_args.output_dir)
 
     # Seq Length - Based on distribution - 496 is the max length interms of space separated tokens
     ####################################### SFT Training #########################################
     print("################# Training started")
-    ### SFT Trainer
-    trainer = SFTTrainer(
+    ### DPO Trainer
+    trainer = DPOTrainer(
         model=model,
         train_dataset=train_dataset,
-        eval_dataset=eval_dataset,
-        peft_config=config,
-        # dataset_text_field="prompt",
-        max_seq_length=input_args.max_seq_length,  # You can specify the maximum sequence length here
+        beta = 0.1, 
         tokenizer=tokenizer,
+        peft_config=config,
         args=args,
-        packing=False,
-        data_collator=collator,
-        formatting_func=formatting_prompts_func,
-        callbacks=[SavePeftModelCallback()],
     )
     trainer.train()
 
@@ -222,14 +229,14 @@ def SFT(input_args):
 
 
     print("################# reloading and merging")
-    ### Reload and Merge (LORA)
+    ### Reload and Merge
     # Reload model in FP16 (instead of NF4)
     base_model = AutoModelForCausalLM.from_pretrained(
-        base_model_id,
+        sft_model_dir,
         return_dict=True,
         torch_dtype=torch.float16,
     )
-    tokenizer = AutoTokenizer.from_pretrained(base_model_id)
+    tokenizer = AutoTokenizer.from_pretrained(sft_model_dir, trust_remote_code=True)
 
     # Merge base model with the adapter
     model = PeftModel.from_pretrained(base_model, model_id=f"{input_args.output_dir}/final_checkpoint")
@@ -252,7 +259,7 @@ def SFT(input_args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="SFT Training Arguments")
+    parser = argparse.ArgumentParser(description="DPO Training Arguments")
     
     parser.add_argument("--model_name_or_path", type=str, default="google/gemma-2b", help="Model name or path")
     parser.add_argument("--dataset_name_or_path", type=str, default="PKU-Alignment/PKU-SafeRLHF", help="Dataset name or path")
@@ -263,7 +270,7 @@ if __name__ == "__main__":
     
     parser.add_argument("--learning_rate", type=float, default=5e-6, help="Learning rate")
     parser.add_argument("--report_to", type=str, default="wandb", help="Reporting destination")
-    parser.add_argument("--run_name", type=str, default="SFT-Training", help="Name of the run")
+    parser.add_argument("--run_name", type=str, default="DPO-Training", help="Name of the run")
     parser.add_argument("--max_seq_length", type=int, default=1024, help="Maximum Sequence length")
     parser.add_argument("--num_train_epochs", type=int, default=3, help="Number of training epochs")
 
@@ -282,4 +289,4 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", type=str, default="./saved-models/no_name-sft", help="Output directory")
     input_args = parser.parse_args()
 
-    SFT(input_args)
+    DPO(input_args)
