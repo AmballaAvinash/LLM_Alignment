@@ -66,7 +66,7 @@ def DPO(input_args):
     print("########## Model name : ", base_model_id)
 
     
-    sft_model_dir= "./saved-models/SFT/merged_model"
+    sft_model_dir= "./saved-models/experiment_again/merged_model"
 
     #################################### Tokenizer ##############################################
     tokenizer = AutoTokenizer.from_pretrained(sft_model_dir, trust_remote_code=True)
