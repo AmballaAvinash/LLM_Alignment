@@ -50,9 +50,9 @@ class SavePeftModelCallback(TrainerCallback):
 def return_prompt_and_responses(samples):
     
         return {
-            "prompt": 
+            "prompt": [
                 "Question: " + samples["prompt"] + "\n\nAnswer: "
-            ,
+            ],
             "chosen": samples["response_0"] ,   # rated better than 1
             "rejected": samples["response_1"] , # rated worse than 0
         }
@@ -196,6 +196,7 @@ def DPO(input_args):
     
     train_dataset = train_dataset.map(
         return_prompt_and_responses,
+        batched=True,
         remove_columns=original_columns
     )
     
