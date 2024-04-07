@@ -8,3 +8,9 @@ pip install pandas
 pip install tensorboard
 pip install trl
 pip install peft bitsandbytes
+
+
+
+DPO references:
+1. https://github.com/mlabonne/llm-course/blob/main/Fine_tune_a_Mistral_7b_model_with_DPO.ipynb
+2. https://huggingface.co/blog/dpo-trl
