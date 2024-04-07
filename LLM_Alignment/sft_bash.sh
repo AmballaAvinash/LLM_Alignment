@@ -4,7 +4,7 @@ conda activate llm_alignment
 
 python gpu_check.py
 
-python sft_trainer.py \
+python LLM_Alignment/sft_trainer.py \
       --model_name_or_path google/gemma-2b \
       --per_device_train_batch_size 8 \
       --per_device_eval_batch_size 8 \
@@ -28,7 +28,7 @@ python sft_trainer.py \
 
 
 
-python DPO_trainer.py \
+python LLM_Alignment/DPO_trainer.py \
       --model_name_or_path google/gemma-2b \
       --per_device_train_batch_size 8 \
       --per_device_eval_batch_size 8 \

@@ -199,6 +199,7 @@ def DPO(input_args):
         remove_columns=original_columns
     )
     
+    print("sampel data : ", train_dataset[0])
     
     print("######### Output Directory : ", input_args.output_dir)
 
@@ -213,6 +214,8 @@ def DPO(input_args):
         tokenizer=tokenizer,
         peft_config=config,
         args=args,
+        max_length=1536,
+        max_prompt_length=1024,
     )
     trainer.train()
 
