@@ -26,7 +26,7 @@ if torch.cuda.is_available():
     device = 'cuda'
 
 
-output_dir = "./saved-models/SFT/merged_model"
+output_dir = "./saved-models/SFT/merged_model"  # ./saved-models/DPO/merged_model"
 
 tokenizer = AutoTokenizer.from_pretrained(output_dir, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token

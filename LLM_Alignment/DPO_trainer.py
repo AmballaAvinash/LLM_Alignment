@@ -155,8 +155,8 @@ def DPO(input_args):
         task_type="CAUSAL_LM",
     )
 
-    # model = get_peft_model(model, config)
-    # print("Model Loaded with LoRA config")
+    model = get_peft_model(model, config)
+    print("Model Loaded with LoRA config")
 
     # --gradient_checkpointing True, workers speed up processing,  grad accumulation - 8, 16, 22 (less memory)
 
