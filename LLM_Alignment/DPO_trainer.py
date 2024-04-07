@@ -199,6 +199,11 @@ def DPO(input_args):
         remove_columns=original_columns
     )
     
+    eval_dataset = eval_dataset.map(
+        return_prompt_and_responses,
+        remove_columns=original_columns
+    )
+    
     print("sampel data : ", train_dataset[0])
     
     print("######### Output Directory : ", input_args.output_dir)
@@ -210,6 +215,7 @@ def DPO(input_args):
     trainer = DPOTrainer(
         model=model,
         train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
         beta = 0.1, 
         tokenizer=tokenizer,
         peft_config=config,
