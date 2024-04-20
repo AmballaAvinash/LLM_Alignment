@@ -85,10 +85,12 @@ def DPO(input_args):
     train_dataset = train_dataset.to_pandas()
     test_dataset = test_dataset.to_pandas()
     
+    trainsamples = 1000
+    testsamples = 100
 
     # considering only 1000 for now in training, 100 in testing (preference ranking)
-    train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:1000]
-    test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:100]
+    train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:trainsamples]
+    test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:testsamples]
 
     train_dataset = Dataset.from_pandas(train_dataset)
     split = train_dataset.train_test_split(test_size=0.2, seed=42)
