@@ -75,9 +75,9 @@ def DPO(input_args):
 
     ####################################### Load Dataset #########################################
     
-    train_dataset = load_from_disk("data/DPO_safe_rlhf_train_data.hf")
-    eval_dataset = load_from_disk("data/DPO_safe_rlhf_eval_data.hf")
-    test_dataset = load_from_disk("data/DPO_safe_rlhf_test_data.hf")
+    train_dataset = load_from_disk("LLM_Alignment/data/DPO_safe_rlhf_train_data.hf")
+    eval_dataset = load_from_disk("LLM_Alignment/data/DPO_safe_rlhf_eval_data.hf")
+    test_dataset = load_from_disk("LLM_Alignment/data/DPO_safe_rlhf_test_data.hf")
     
     
     

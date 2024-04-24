@@ -11,7 +11,7 @@ from trl import DPOTrainer, SFTTrainer
 import bitsandbytes as bnb
 from trl import DataCollatorForCompletionOnlyLM
 
-from datasets import load_dataset, Dataset
+from datasets import load_dataset, Dataset, load_from_disk
 from transformers import TrainerCallback, TrainerState, TrainerControl
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 
@@ -26,7 +26,7 @@ if torch.cuda.is_available():
     device = 'cuda'
 
 
-output_dir = "./saved-models/SFT/merged_model"  # ./saved-models/DPO/merged_model"
+output_dir = "./saved-models/SFT/merged_model"  
 
 tokenizer = AutoTokenizer.from_pretrained(output_dir, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
@@ -47,24 +47,28 @@ model = AutoModelForCausalLM.from_pretrained(output_dir,
                                             use_cache=False)
 print("############## Model loaded successfully")
 
+train_dataset = load_from_disk("LLM_Alignment/data/sft_safe_rlhf_train_data.hf")
+eval_dataset = load_from_disk("LLM_Alignment/data/sft_safe_rlhf_eval_data.hf")
+test_dataset = load_from_disk("LLM_Alignment/data/sft_safe_rlhf_test_data.hf")
 
-dataset = load_dataset("PKU-Alignment/PKU-SafeRLHF")
 
-train_dataset = dataset['train']
-test_dataset = dataset['test']
+# dataset = load_dataset("PKU-Alignment/PKU-SafeRLHF")
 
-train_dataset = train_dataset.to_pandas()
-test_dataset = test_dataset.to_pandas()
+# train_dataset = dataset['train']
+# test_dataset = dataset['test']
 
-# considering only 1000 for now in training, 100 in testing
-train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:1000]
-test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:100]
+# train_dataset = train_dataset.to_pandas()
+# test_dataset = test_dataset.to_pandas()
 
-train_dataset = Dataset.from_pandas(train_dataset)
-split = train_dataset.train_test_split(test_size=0.2, seed=42)
-train_dataset, eval_dataset = split['train'], split['test']
+# # considering only 1000 for now in training, 100 in testing
+# train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:1000]
+# test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:100]
 
-test_dataset = Dataset.from_pandas(test_dataset)
+# train_dataset = Dataset.from_pandas(train_dataset)
+# split = train_dataset.train_test_split(test_size=0.2, seed=42)
+# train_dataset, eval_dataset = split['train'], split['test']
+
+# test_dataset = Dataset.from_pandas(test_dataset)
 
 print("Train Data")
 print(train_dataset)

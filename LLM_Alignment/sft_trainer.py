@@ -58,9 +58,9 @@ def SFT(input_args):
     ####################################### Load Dataset #########################################
     
     
-    train_dataset = load_from_disk("data/sft_safe_rlhf_train_data.hf")
-    eval_dataset = load_from_disk("data/sft_safe_rlhf_eval_data.hf")
-    test_dataset = load_from_disk("data/sft_safe_rlhf_test_data.hf")
+    train_dataset = load_from_disk("LLM_Alignment/data/sft_safe_rlhf_train_data.hf")
+    eval_dataset = load_from_disk("LLM_Alignment/data/sft_safe_rlhf_eval_data.hf")
+    test_dataset = load_from_disk("LLM_Alignment/data/sft_safe_rlhf_test_data.hf")
     
     
     # dataset = load_dataset(input_args.dataset_name_or_path)

@@ -1,6 +1,6 @@
 SFT LLM using PEFT
 
-Create environment (virtualenv or conda) -  Python 3.8
+Create environment (virtualenv or conda) -  Python 3.9:  conda create -n NLP685 python=3.9 
 pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1+cu117 -f https://download.pytorch.org/whl/torch_stable.html
 pip install transformers
 pip install scikit-learn
