@@ -19,7 +19,7 @@ from trl import DPOTrainer, SFTTrainer
 import bitsandbytes as bnb
 from trl import DataCollatorForCompletionOnlyLM
 
-from datasets import load_dataset, Dataset
+from datasets import load_dataset, Dataset, load_from_disk
 from transformers import TrainerCallback, TrainerState, TrainerControl
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 
@@ -66,7 +66,7 @@ def DPO(input_args):
     print("########## Model name : ", base_model_id)
 
     
-    sft_model_dir= "./saved-models/experiment_again/merged_model"
+    sft_model_dir= "./saved-models/SFT/merged_model"
 
     #################################### Tokenizer ##############################################
     tokenizer = AutoTokenizer.from_pretrained(sft_model_dir, trust_remote_code=True)
@@ -75,28 +75,37 @@ def DPO(input_args):
 
     ####################################### Load Dataset #########################################
     
-    dataset = load_dataset(input_args.dataset_name_or_path)
-
-    train_dataset = dataset['train']
-    test_dataset = dataset['test']
+    train_dataset = load_from_disk("data/DPO_safe_rlhf_train_data.hf")
+    eval_dataset = load_from_disk("data/DPO_safe_rlhf_eval_data.hf")
+    test_dataset = load_from_disk("data/DPO_safe_rlhf_test_data.hf")
     
-    original_columns = train_dataset.column_names
-
-    train_dataset = train_dataset.to_pandas()
-    test_dataset = test_dataset.to_pandas()
     
-    trainsamples = 1000
-    testsamples = 100
+    
+    # dataset = load_dataset(input_args.dataset_name_or_path)
 
-    # considering only 1000 for now in training, 100 in testing (preference ranking)
-    train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:trainsamples]
-    test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:testsamples]
 
-    train_dataset = Dataset.from_pandas(train_dataset)
-    split = train_dataset.train_test_split(test_size=0.2, seed=42)
-    train_dataset, eval_dataset = split['train'], split['test']
 
-    test_dataset = Dataset.from_pandas(test_dataset)
+
+    # train_dataset = dataset['train']
+    # test_dataset = dataset['test']
+    
+    # original_columns = train_dataset.column_names
+
+    # train_dataset = train_dataset.to_pandas()
+    # test_dataset = test_dataset.to_pandas()
+    
+    # trainsamples = 1000
+    # testsamples = 100
+
+    # # considering only 1000 for now in training, 100 in testing (preference ranking)
+    # train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:trainsamples]
+    # test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:testsamples]
+
+    # train_dataset = Dataset.from_pandas(train_dataset)
+    # split = train_dataset.train_test_split(test_size=0.2, seed=42)
+    # train_dataset, eval_dataset = split['train'], split['test']
+
+    # test_dataset = Dataset.from_pandas(test_dataset)
 
     print("Train Data")
     print(train_dataset)
@@ -196,15 +205,15 @@ def DPO(input_args):
 
     ####################################### Data Formatting #########################################
     
-    train_dataset = train_dataset.map(
-        return_prompt_and_responses,
-        remove_columns=original_columns
-    )
+    # train_dataset = train_dataset.map(
+    #     return_prompt_and_responses,
+    #     remove_columns=original_columns
+    # )
     
-    eval_dataset = eval_dataset.map(
-        return_prompt_and_responses,
-        remove_columns=original_columns
-    )
+    # eval_dataset = eval_dataset.map(
+    #     return_prompt_and_responses,
+    #     remove_columns=original_columns
+    # )
     
     print("sampel data : ", train_dataset[0])
     

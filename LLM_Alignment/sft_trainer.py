@@ -11,7 +11,7 @@ from trl import DPOTrainer, SFTTrainer
 import bitsandbytes as bnb
 from trl import DataCollatorForCompletionOnlyLM
 
-from datasets import load_dataset, Dataset
+from datasets import load_dataset, Dataset,  load_from_disk
 from transformers import TrainerCallback, TrainerState, TrainerControl
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 
@@ -57,23 +57,29 @@ def SFT(input_args):
 
     ####################################### Load Dataset #########################################
     
-    dataset = load_dataset(input_args.dataset_name_or_path)
+    
+    train_dataset = load_from_disk("data/sft_safe_rlhf_train_data.hf")
+    eval_dataset = load_from_disk("data/sft_safe_rlhf_eval_data.hf")
+    test_dataset = load_from_disk("data/sft_safe_rlhf_test_data.hf")
+    
+    
+    # dataset = load_dataset(input_args.dataset_name_or_path)
 
-    train_dataset = dataset['train']
-    test_dataset = dataset['test']
+    # train_dataset = dataset['train']
+    # test_dataset = dataset['test']
 
-    train_dataset = train_dataset.to_pandas()
-    test_dataset = test_dataset.to_pandas()
+    # train_dataset = train_dataset.to_pandas()
+    # test_dataset = test_dataset.to_pandas()
 
-    # considering only 1000 for now in training, 100 in testing (preference ranking)
-    train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:1000]
-    test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:100]
+    # # considering only 1000 for now in training, 100 in testing (preference ranking)
+    # train_dataset = train_dataset[(train_dataset['is_response_0_safe'] == True) & (train_dataset['is_response_1_safe'] == False)][:1000]
+    # test_dataset = test_dataset[(test_dataset['is_response_0_safe'] == True) & (test_dataset['is_response_1_safe'] == False)][:100]
 
-    train_dataset = Dataset.from_pandas(train_dataset)
-    split = train_dataset.train_test_split(test_size=0.2, seed=42)
-    train_dataset, eval_dataset = split['train'], split['test']
+    # train_dataset = Dataset.from_pandas(train_dataset)
+    # split = train_dataset.train_test_split(test_size=0.2, seed=42)
+    # train_dataset, eval_dataset = split['train'], split['test']
 
-    test_dataset = Dataset.from_pandas(test_dataset)
+    # test_dataset = Dataset.from_pandas(test_dataset)
 
     print("Train Data")
     print(train_dataset)
@@ -175,7 +181,7 @@ def SFT(input_args):
             input_text = examples["prompt"][i]
 
             # note that response_0 is safe response (we filtered the data based on that, viceversa can also be done)
-            response = examples["response_0"][i]
+            response = examples["label"][i]
 
             prompt = "### Instruction: Answer the following question, while the response provides accurate information and also adherence to ethical standards, respectfulness, avoidance of harmful or inappropriate content.\n\n ### Prompt: " + input_text + "\n### Response: " + response
             prompt += " "+tokenizer.eos_token
