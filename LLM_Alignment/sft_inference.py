@@ -102,5 +102,7 @@ print(outputs[i])
 
 
 
+# store in csv
+
 
 # evaluation metrics
