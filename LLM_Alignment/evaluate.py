@@ -6,7 +6,7 @@
 # nltk.download('punkt')
 # !pip install tensorflow
 # !pip install rouge-score
-# !pip install unbabel-comet
+# !pip install unbabel-comet
 
 
 from sacrebleu import corpus_bleu
@@ -22,7 +22,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--metric', type=str, default="bleu", help='evaluation metric')
-parser.add_argument('--path', type=str, default='safe_gemma_10epochs_5000samples_train.csv', help='model responses csv path')
+parser.add_argument('--path', type=str, help='model responses csv path')
 opt = parser.parse_args()
 print (opt)
 

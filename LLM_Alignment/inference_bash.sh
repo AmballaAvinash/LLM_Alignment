@@ -4,6 +4,6 @@ conda activate llm_alignment
 
 python gpu_check.py
 
-python sft_inference.py
+python LLM_Alignment/sft_inference.py
 
 python DPO_inference.py
