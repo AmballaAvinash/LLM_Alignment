@@ -11,7 +11,9 @@
 
 from sacrebleu import corpus_bleu
 import nltk
-from nltk.translate.bleu_score import sentence_bleu
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+
+
 from bert_score import BERTScorer
 from bert_score import score as bert_score
 from bleurt import score
@@ -46,7 +48,7 @@ class ScoreBleu(Evaluate):
         self.scorer = sentence_bleu
         
     def score(self, ref, output):
-        score = self.scorer([ref.split()], output.split())
+        score = self.scorer([ref.split()], output.split(), smoothing_function=SmoothingFunction().method4)
         return score
 
 class ScoreBleurt(Evaluate):
