@@ -6,4 +6,8 @@ python gpu_check.py
 
 python LLM_Alignment/sft_inference.py
 
-python DPO_inference.py
+python LLM_Alignment/DPO_inference.py
+
+python LLM_Alignment/evaluate.py --path LLM_Alignment/output/sft_inference.csv
+
+python LLM_Alignment/evaluate.py --path LLM_Alignment/output/DPO_inference.csv
