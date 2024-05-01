@@ -30,8 +30,8 @@ python LLM_Alignment/sft_trainer.py \
 
 python LLM_Alignment/DPO_trainer.py \
       --model_name_or_path google/gemma-2b \
-      --per_device_train_batch_size 32 \
-      --per_device_eval_batch_size 32 \
+      --per_device_train_batch_size 8 \
+      --per_device_eval_batch_size 8 \
       --gradient_accumulation_steps 1 \
       --learning_rate 5e-5 \
       --report_to wandb \
