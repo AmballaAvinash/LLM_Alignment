@@ -107,6 +107,6 @@ print(outputs[i])
 # store in csv
 df_dict = {"prompt": text, "desired_response": test_dataset['label'][:5] , "model_response": outputs }
 df = pd.DataFrame.from_dict(df_dict)
-df.to_csv("./output/sft_inference.csv")
+df.to_csv("LLM_Alignment/output/sft_inference.csv")
 
 # evaluation metrics
