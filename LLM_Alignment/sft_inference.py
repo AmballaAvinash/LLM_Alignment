@@ -94,7 +94,7 @@ test_dataset = Dataset.from_pandas(test_dataset)
 text = test_dataset['sft_prompt'][:5]
 
 inputs = tokenizer(text, add_special_tokens=True,return_tensors='pt', padding=True).to(device)
-outputs = model.generate(inputs['input_ids'], pad_token_id=tokenizer.pad_token_id, max_new_tokens=100,num_beams=1,temperature=0.1)
+outputs = model.generate(inputs['input_ids'], pad_token_id=tokenizer.pad_token_id, max_new_tokens=100,num_beams=1, do_sample = True)
 outputs = tokenizer.batch_decode(outputs[:, inputs['input_ids'].shape[1]:], skip_special_tokens=True)
 torch.cuda.empty_cache()
 
