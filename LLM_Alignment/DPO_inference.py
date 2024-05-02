@@ -14,6 +14,7 @@ from trl import DataCollatorForCompletionOnlyLM
 from datasets import load_dataset, Dataset, load_from_disk
 from transformers import TrainerCallback, TrainerState, TrainerControl
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
+import pandas as pd
 
 # Set the environment variable
 os.environ["TOKENIZERS_PARALLELISM"] = "false" # to avoid warning "Tokenizer deadlocks"
@@ -92,7 +93,7 @@ print("########### Dataset is loaded properly")
 text = test_dataset['prompt'][:5]
 
 inputs = tokenizer(text, add_special_tokens=True,return_tensors='pt', padding=True).to(device)
-outputs = model.generate(inputs['input_ids'], pad_token_id=tokenizer.pad_token_id, max_new_tokens=75,num_beams=1,temperature=0)
+outputs = model.generate(inputs['input_ids'], pad_token_id=tokenizer.pad_token_id, max_new_tokens=100,num_beams=1, do_sample = True)
 outputs = tokenizer.batch_decode(outputs[:, inputs['input_ids'].shape[1]:], skip_special_tokens=True)
 torch.cuda.empty_cache()
 
@@ -102,6 +103,9 @@ print(outputs[i])
 
 
 # store in csv
+df_dict = {"prompt": text, "desired_response": test_dataset['label'][:5] , "model_response": outputs }
+df = pd.DataFrame.from_dict(df_dict)
+df.to_csv("LLM_Alignment/output/DPO_inference.csv")
 
 
 # evaluation metrics
