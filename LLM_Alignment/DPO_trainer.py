@@ -132,14 +132,28 @@ def DPO(input_args):
     
     
     model = AutoModelForCausalLM.from_pretrained(sft_model_dir, 
+                                                low_cpu_mem_usage=True,
+                                                torch_dtype=torch.bfloat16,
+                                                use_flash_attention_2=True,
                                                 quantization_config=bnb_config, 
                                                 device_map={"": 0},
                                                 use_cache=False)
     
+    
+    ref_model = AutoModelForCausalLM.from_pretrained(
+                                            		sft_model_dir,
+                                            		low_cpu_mem_usage=True,
+                                            		torch_dtype=torch.bfloat16,
+                                            		load_in_4bit=True,
+                                            		use_flash_attention_2=True,
+                                            		bnb_4bit_compute_dtype=torch.bfloat16,
+	).eval()
+    
+    
     model.config.end_token_id = tokenizer.eos_token_id
     model.config.pad_token_id = model.config.eos_token_id
     
-    model = prepare_model_for_kbit_training(model,use_gradient_checkpointing=False)
+    # model = prepare_model_for_kbit_training(model,use_gradient_checkpointing=False)
 
     print("Model Loaded")
     print()
@@ -155,11 +169,11 @@ def DPO(input_args):
             "q_proj",
             "k_proj",
             "v_proj",
-            "o_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
-            "lm_head",
+            # "o_proj",
+            # "gate_proj",
+            # "up_proj",
+            # "down_proj",
+            # "lm_head",
         ],
         bias="none",
         lora_dropout=input_args.lora_dropout,  # Conventional
@@ -225,6 +239,7 @@ def DPO(input_args):
     ### DPO Trainer
     trainer = DPOTrainer(
         model=model,
+        ref_model = ref_model,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         beta = 0.1, 
