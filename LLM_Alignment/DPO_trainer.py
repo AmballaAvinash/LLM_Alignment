@@ -177,7 +177,7 @@ def DPO(input_args):
         output_dir=input_args.output_dir,
         warmup_steps=1,
         per_device_train_batch_size=input_args.per_device_train_batch_size,
-        per_device_eval_batch_size=input_args.per_device_eval_batch_size,
+        # per_device_eval_batch_size=input_args.per_device_eval_batch_size,
         gradient_accumulation_steps=input_args.gradient_accumulation_steps,
         gradient_checkpointing=True,
         # group_by_length=True,
@@ -189,9 +189,9 @@ def DPO(input_args):
         logging_steps=input_args.log_steps,              # When to start reporting loss
         save_strategy=input_args.save_strategy,       # Save the model checkpoint every logging step
         save_steps=input_args.save_steps,                # Save checkpoints every 100 steps
-        evaluation_strategy=input_args.evaluation_strategy, # Evaluate the model every epoch
-        eval_steps=input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
-        do_eval=True,                # Perform evaluation at the end of training
+        # evaluation_strategy=input_args.evaluation_strategy, # Evaluate the model every epoch
+        # eval_steps=input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
+        # do_eval=True,                # Perform evaluation at the end of training
         report_to=input_args.report_to,           # Comment this out if you don't want to use weights & baises
         dataloader_pin_memory=True,                           
         dataloader_num_workers=4,
