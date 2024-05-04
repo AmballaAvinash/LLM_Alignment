@@ -1,4 +1,5 @@
-import torch
+import torch, gc
+
 
 if torch.cuda.is_available():
     print("GPU Available : ", torch.cuda.is_available())
@@ -6,5 +7,6 @@ if torch.cuda.is_available():
 else:
     print("GPU Not Available, CPU is being used")
 
-print("clear cache")
+print("Clearing cache")
+gc.collect()
 torch.cuda.empty_cache()
