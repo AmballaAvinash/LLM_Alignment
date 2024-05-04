@@ -4,8 +4,8 @@
 #SBATCH --mem=50G  # Requested Memory
 #SBATCH -p gpu  # Partition
 #SBATCH -G 1  # Number of GPUs
-#SBATCH -t 4:00:00  # Job time limit
-#SBATCH --constraint=vram48
+#SBATCH -t 8:00:00  # Job time limit
+#SBATCH --constraint=vram32
 #SBATCH -o slurm-%j.out  # %j = job ID
 export PYTHONPATH="${PYTHONPATH}=$(pwd):$PYTHONPATH"
 
@@ -45,8 +45,8 @@ python LLM_Alignment/gpu_check.py
 
 python LLM_Alignment/DPO_trainer.py \
       --model_name_or_path google/gemma-2b \
-      --per_device_train_batch_size 8 \
-      --per_device_eval_batch_size 8 \
+      --per_device_train_batch_size 4 \
+      --per_device_eval_batch_size 4 \
       --gradient_accumulation_steps 1 \
       --learning_rate 5e-5 \
       --report_to wandb \
