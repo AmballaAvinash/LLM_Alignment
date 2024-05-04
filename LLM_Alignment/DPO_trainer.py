@@ -133,7 +133,6 @@ def DPO(input_args):
     
     model = AutoModelForCausalLM.from_pretrained(sft_model_dir, 
                                                 low_cpu_mem_usage=True,
-                                                torch_dtype=torch.bfloat16,
                                                 quantization_config=bnb_config, 
                                                 device_map={"": 0},
                                                 use_cache=False)
