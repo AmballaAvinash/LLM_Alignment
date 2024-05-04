@@ -134,7 +134,6 @@ def DPO(input_args):
     model = AutoModelForCausalLM.from_pretrained(sft_model_dir, 
                                                 low_cpu_mem_usage=True,
                                                 torch_dtype=torch.bfloat16,
-                                                use_flash_attention_2=True,
                                                 quantization_config=bnb_config, 
                                                 device_map={"": 0},
                                                 use_cache=False)
@@ -145,7 +144,6 @@ def DPO(input_args):
                                             		low_cpu_mem_usage=True,
                                             		torch_dtype=torch.bfloat16,
                                             		load_in_4bit=True,
-                                            		use_flash_attention_2=True,
                                             		bnb_4bit_compute_dtype=torch.bfloat16,
 	).eval()
     
