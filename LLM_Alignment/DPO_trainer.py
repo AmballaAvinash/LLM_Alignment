@@ -137,16 +137,7 @@ def DPO(input_args):
                                                 quantization_config=bnb_config, 
                                                 device_map={"": 0},
                                                 use_cache=False)
-    
-    
-    ref_model = AutoModelForCausalLM.from_pretrained(
-                                            		sft_model_dir,
-                                            		low_cpu_mem_usage=True,
-                                            		torch_dtype=torch.bfloat16,
-                                            		load_in_4bit=True,
-                                            		bnb_4bit_compute_dtype=torch.bfloat16,
-	).eval()
-    
+       
     
     model.config.end_token_id = tokenizer.eos_token_id
     model.config.pad_token_id = model.config.eos_token_id
@@ -237,7 +228,6 @@ def DPO(input_args):
     ### DPO Trainer
     trainer = DPOTrainer(
         model=model,
-        ref_model = ref_model,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         beta = 0.1, 
