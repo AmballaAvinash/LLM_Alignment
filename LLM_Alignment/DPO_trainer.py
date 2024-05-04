@@ -175,29 +175,28 @@ def DPO(input_args):
     ####################################### Training Arguments #########################################
     args=transformers.TrainingArguments(
         output_dir=input_args.output_dir,
-        # warmup_steps=1,
+        warmup_steps=1,
         per_device_train_batch_size=input_args.per_device_train_batch_size,
         per_device_eval_batch_size=input_args.per_device_eval_batch_size,
         gradient_accumulation_steps=input_args.gradient_accumulation_steps,
         gradient_checkpointing=True,
-        # group_by_length=True,
+        group_by_length=True,
         num_train_epochs=input_args.num_train_epochs,
         learning_rate=input_args.learning_rate,
         optim="paged_adamw_32bit",
         
-        # logging_strategy=input_args.logging_strategy,
+        logging_strategy=input_args.logging_strategy,
         logging_steps=input_args.log_steps,              # When to start reporting loss
-        # save_strategy=input_args.save_strategy,       # Save the model checkpoint every logging step
-        # save_steps=input_args.save_steps,                # Save checkpoints every 100 steps
-        # evaluation_strategy=input_args.evaluation_strategy, # Evaluate the model every epoch
-        # eval_steps=input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
-        # do_eval=True,                # Perform evaluation at the end of training
+        save_strategy=input_args.save_strategy,       # Save the model checkpoint every logging step
+        save_steps=input_args.save_steps,                # Save checkpoints every 100 steps
+        evaluation_strategy=input_args.evaluation_strategy, # Evaluate the model every epoch
+        eval_steps=input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
+        do_eval=True,                # Perform evaluation at the end of training
         report_to=input_args.report_to,           # Comment this out if you don't want to use weights & baises
-        # dataloader_pin_memory=True,                           
-        # dataloader_num_workers=4,
-        # dataloader_prefetch_factor=1,
-        # logging_first_step=input_args.logging_first_step,
-        
+        dataloader_pin_memory=True,                           
+        dataloader_num_workers=4,
+        dataloader_prefetch_factor=1,
+        logging_first_step=input_args.logging_first_step,
         lr_scheduler_type="cosine",
         seed=42,
         bf16=True,
@@ -207,6 +206,7 @@ def DPO(input_args):
         disable_tqdm=False
     )
     
+
 
     ####################################### Data Formatting #########################################
     
@@ -241,23 +241,30 @@ def DPO(input_args):
         max_prompt_length=1024,
     )
     
-    try:
-        trainer.train()
+    # try:
+    #     trainer.train()
     
-        print("################# Training is done")
+    #     print("################# Training is done")
         
-        trainer.model.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
-        tokenizer.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
+    #     trainer.model.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
+    #     tokenizer.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
 
         
         
-    except Exception as e:
-        # Flush memory
-        gc.collect()
-        torch.cuda.empty_cache()
-        print(e)
-        return
+    # except Exception as e:
+    #     # Flush memory
+    #     gc.collect()
+    #     torch.cuda.empty_cache()
+    #     print(e)
+    #     return
 
+    trainer.train()
+
+    print("################# Training is done")
+    
+    trainer.model.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
+    tokenizer.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
+    
 
     # Flush memory
     del trainer, model
