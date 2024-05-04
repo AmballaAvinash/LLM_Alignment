@@ -142,7 +142,7 @@ def DPO(input_args):
     model.config.end_token_id = tokenizer.eos_token_id
     model.config.pad_token_id = model.config.eos_token_id
     
-    # model = prepare_model_for_kbit_training(model,use_gradient_checkpointing=False)
+    model = prepare_model_for_kbit_training(model,use_gradient_checkpointing=False)
 
     print("Model Loaded")
     print()
