@@ -225,6 +225,7 @@ def DPO(input_args):
     # Seq Length - Based on distribution - 496 is the max length interms of space separated tokens
     ####################################### SFT Training #########################################
     print("################# Training started")
+    
     ### DPO Trainer
     trainer = DPOTrainer(
         model=model,
@@ -237,18 +238,30 @@ def DPO(input_args):
         max_length=1536,
         max_prompt_length=1024,
     )
-    trainer.train()
+    
+    try:
+        trainer.train()
+    
+        print("################# Training is done")
+        
+        trainer.model.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
+        tokenizer.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
 
-    print("################# Training is done")
+        
+        
+    except Exception as e:
+        # Flush memory
+        gc.collect()
+        torch.cuda.empty_cache()
+        print(e)
+        return
 
-
-    trainer.model.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
-    tokenizer.save_pretrained(f"{input_args.output_dir}/final_checkpoint")
 
     # Flush memory
     del trainer, model
     gc.collect()
     torch.cuda.empty_cache()
+    
 
 
     print("################# reloading and merging")
