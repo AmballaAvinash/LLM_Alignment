@@ -180,7 +180,7 @@ def DPO(input_args):
         per_device_eval_batch_size=input_args.per_device_eval_batch_size,
         gradient_accumulation_steps=input_args.gradient_accumulation_steps,
         gradient_checkpointing=True,
-        group_by_length=True,
+        # group_by_length=True,
         num_train_epochs=input_args.num_train_epochs,
         learning_rate=input_args.learning_rate,
         optim="paged_adamw_32bit",
