@@ -175,7 +175,7 @@ def DPO(input_args):
     ####################################### Training Arguments #########################################
     args=transformers.TrainingArguments(
         output_dir=input_args.output_dir,
-        warmup_steps=1,
+        # warmup_steps=1,
         per_device_train_batch_size=input_args.per_device_train_batch_size,
         per_device_eval_batch_size=input_args.per_device_eval_batch_size,
         gradient_accumulation_steps=input_args.gradient_accumulation_steps,
@@ -184,25 +184,29 @@ def DPO(input_args):
         num_train_epochs=input_args.num_train_epochs,
         learning_rate=input_args.learning_rate,
         optim="paged_adamw_32bit",
-        logging_strategy=input_args.logging_strategy,
+        
+        # logging_strategy=input_args.logging_strategy,
         logging_steps=input_args.log_steps,              # When to start reporting loss
-        save_strategy=input_args.save_strategy,       # Save the model checkpoint every logging step
-        save_steps=input_args.save_steps,                # Save checkpoints every 100 steps
-        evaluation_strategy=input_args.evaluation_strategy, # Evaluate the model every epoch
-        eval_steps=input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
-        do_eval=True,                # Perform evaluation at the end of training
+        # save_strategy=input_args.save_strategy,       # Save the model checkpoint every logging step
+        # save_steps=input_args.save_steps,                # Save checkpoints every 100 steps
+        # evaluation_strategy=input_args.evaluation_strategy, # Evaluate the model every epoch
+        # eval_steps=input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
+        # do_eval=True,                # Perform evaluation at the end of training
         report_to=input_args.report_to,           # Comment this out if you don't want to use weights & baises
-        dataloader_pin_memory=True,                           
-        dataloader_num_workers=4,
-        dataloader_prefetch_factor=1,
-        logging_first_step=input_args.logging_first_step,
+        # dataloader_pin_memory=True,                           
+        # dataloader_num_workers=4,
+        # dataloader_prefetch_factor=1,
+        # logging_first_step=input_args.logging_first_step,
+        
         lr_scheduler_type="cosine",
         seed=42,
-        # bf16=True,
+        bf16=True,
+        warmup_ratio=0.05,
         # fp16=False,
         # tf32=True,
         disable_tqdm=False
     )
+    
 
     ####################################### Data Formatting #########################################
     
@@ -216,7 +220,7 @@ def DPO(input_args):
     #     remove_columns=original_columns
     # )
     
-    print("sampel data : ", train_dataset[0])
+    print("sample data : ", train_dataset[0])
     
     print("######### Output Directory : ", input_args.output_dir)
 
