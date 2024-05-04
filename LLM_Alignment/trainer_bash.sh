@@ -1,10 +1,3 @@
-module load miniconda/22.11.1-1 cuda/11.3.1
-
-conda activate NLP685
-
-python LLM_Alignment/gpu_check.py
-
-
 #!/bin/bash
 #SBATCH --mail-type=BEGIN
 #SBATCH -c 2  # Number of Cores per Task
@@ -15,6 +8,14 @@ python LLM_Alignment/gpu_check.py
 #SBATCH --constraint=vram40
 #SBATCH -o slurm-%j.out  # %j = job ID
 export PYTHONPATH="${PYTHONPATH}=$(pwd):$PYTHONPATH"
+
+
+module load miniconda/22.11.1-1 cuda/11.3.1
+
+conda activate NLP685
+
+python LLM_Alignment/gpu_check.py
+
 
 
 'python LLM_Alignment/sft_trainer.py \
