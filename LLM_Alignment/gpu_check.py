@@ -5,3 +5,6 @@ if torch.cuda.is_available():
     print("GPU Count : ", torch.cuda.device_count())
 else:
     print("GPU Not Available, CPU is being used")
+
+print("clear cache")
+torch.cuda.empty_cache()
