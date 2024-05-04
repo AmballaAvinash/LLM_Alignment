@@ -132,7 +132,6 @@ def DPO(input_args):
     
     
     model = AutoModelForCausalLM.from_pretrained(sft_model_dir, 
-                                                low_cpu_mem_usage=True,
                                                 quantization_config=bnb_config, 
                                                 device_map={"": 0},
                                                 use_cache=False)
@@ -157,11 +156,11 @@ def DPO(input_args):
             "q_proj",
             "k_proj",
             "v_proj",
-            # "o_proj",
-            # "gate_proj",
-            # "up_proj",
-            # "down_proj",
-            # "lm_head",
+            "o_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj",
+            "lm_head",
         ],
         bias="none",
         lora_dropout=input_args.lora_dropout,  # Conventional
