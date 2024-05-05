@@ -18,8 +18,8 @@ python LLM_Alignment/gpu_check.py
 
 
 
-'python LLM_Alignment/sft_trainer.py \
-      --model_name_or_path google/gemma-2b \
+python LLM_Alignment/sft_trainer.py \
+      --model_name_or_path google/gemma-2b-it \
       --per_device_train_batch_size 32 \
       --per_device_eval_batch_size 32 \
       --gradient_accumulation_steps 1 \
@@ -38,13 +38,13 @@ python LLM_Alignment/gpu_check.py
       --lora_rank 8 \
       --lora_alpha 32 \
       --lora_dropout 0.1 \
-      --output_dir ./saved-models/SFT
-'
+      --output_dir ./saved-models/SFT_gemma-2b-it
+
 
 
 
 python LLM_Alignment/DPO_trainer.py \
-      --model_name_or_path google/gemma-2b \
+      --model_name_or_path ./saved-models/SFT_gemma-2b-it/merged_model \
       --per_device_train_batch_size 4 \
       --per_device_eval_batch_size 4 \
       --gradient_accumulation_steps 1 \
@@ -63,4 +63,4 @@ python LLM_Alignment/DPO_trainer.py \
       --lora_rank 8 \
       --lora_alpha 32 \
       --lora_dropout 0.1 \
-      --output_dir ./saved-models/DPO
+      --output_dir ./saved-models/DPO_gemma-2b-it

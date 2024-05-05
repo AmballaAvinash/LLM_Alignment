@@ -61,12 +61,13 @@ def return_prompt_and_responses(samples):
     
 def DPO(input_args):
 
-    base_model_id = input_args.model_name_or_path # f"MBZUAI/LaMini-GPT-124M"
+    # base_model_id = input_args.model_name_or_path # f"MBZUAI/LaMini-GPT-124M"
     
-    print("########## Model name : ", base_model_id)
+    
+    sft_model_dir= input_args.model_name_or_path  # "./saved-models/SFT/merged_model"
+    
+    print("########## SFT model dir : ", sft_model_dir)
 
-    
-    sft_model_dir= "./saved-models/SFT/merged_model"
 
     #################################### Tokenizer ##############################################
     tokenizer = AutoTokenizer.from_pretrained(sft_model_dir, trust_remote_code=True)
