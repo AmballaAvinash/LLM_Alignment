@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --mail-type=BEGIN
 #SBATCH -c 2  # Number of Cores per Task
-#SBATCH --mem=50G  # Requested Memory
-#SBATCH -p gpu  # Partition
+#SBATCH --mem=40G  # Requested Memory
+#SBATCH -p gpu-preempt  # Partition
 #SBATCH -G 1  # Number of GPUs
 #SBATCH -t 20:00:00  # Job time limit
 #SBATCH -o slurm-%j.out  # %j = job ID
