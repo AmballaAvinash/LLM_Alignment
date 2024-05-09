@@ -4,9 +4,9 @@
 #SBATCH --mem=50G  # Requested Memory
 #SBATCH -p gpu  # Partition
 #SBATCH -G 1  # Number of GPUs
-#SBATCH -t 8:00:00  # Job time limit
-#SBATCH --constraint=vram32
+#SBATCH -t 20:00:00  # Job time limit
 #SBATCH -o slurm-%j.out  # %j = job ID
+#SBATCH --constraint=[a100]
 export PYTHONPATH="${PYTHONPATH}=$(pwd):$PYTHONPATH"
 
 
@@ -18,7 +18,7 @@ python LLM_Alignment/gpu_check.py
 
 
 
-python LLM_Alignment/sft_trainer.py \
+'python LLM_Alignment/sft_trainer.py \
       --model_name_or_path google/gemma-2b-it \
       --per_device_train_batch_size 4 \
       --per_device_eval_batch_size 4 \
@@ -38,13 +38,13 @@ python LLM_Alignment/sft_trainer.py \
       --lora_rank 8 \
       --lora_alpha 32 \
       --lora_dropout 0.1 \
-      --output_dir ./saved-models/SFT_gemma-2b-it
+      --output_dir ./saved-models/SFT_gemma-2b-it'
 
 
 
 
-python LLM_Alignment/DPO_trainer.py \
-      --model_name_or_path ./saved-models/SFT_gemma-2b-it/merged_model \
+python LLM_Alignment/DPO_trainer_LLAMA.py \
+      --model_name_or_path dsaluru/Instruction-Tuned-LLaMa-7B-Alpaca-no-quant\
       --per_device_train_batch_size 4 \
       --per_device_eval_batch_size 4 \
       --gradient_accumulation_steps 1 \
@@ -63,4 +63,4 @@ python LLM_Alignment/DPO_trainer.py \
       --lora_rank 8 \
       --lora_alpha 32 \
       --lora_dropout 0.1 \
-      --output_dir ./saved-models/DPO_gemma-2b-it
+      --output_dir ./saved-models/DPO_LLAMA-7B
