@@ -19,5 +19,8 @@ python LLM_Alignment/gpu_check.py
 python LLM_Alignment/generate_responses_for_safe_datasets.py \
     --model_name_or_path ./saved-models/DPO_LLAMA-7B/merged_model \
     --save_name DPO_LLAMA-7B
+    
+    
+python LLM_Alignment/LLAMAguard_evaluate.py
 
 
