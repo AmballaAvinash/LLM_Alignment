@@ -73,7 +73,7 @@ eval_datasets = [
 ]
 
 eval_resps_save_root = "LLM_Alignment/output"
-model_save = "DPO_LLAMA"
+model_save = "DPO_LLAMA-7B"
 
 results = {
     
