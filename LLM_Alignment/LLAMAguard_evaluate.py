@@ -16,7 +16,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false" # to avoid warning "Tokenizer dea
 
 # replace following with your own huggingface account key
 # os.environ["HF_TOKEN"] = "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" # my huggingface key to access llama models
-os.environ["HF_TOKEN"] = "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"
+os.environ["HF_TOKEN"] = "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"
 
 
 model_id = "meta-llama/LlamaGuard-7b"
