@@ -184,16 +184,17 @@ if __name__=="__main__":
     
     eval_resps_save_root = "LLM_Alignment/output"
     model_save = "DPO_LLAMA-7B"
+    
+    results = {}
 
-    dataset = load_dataset("allenai/ai2_arc", 'ARC-Easy')
-    actual_op, model_op = return_outputs(dataset, inferencer, model)
-    acc = compute_acc(actual_op, model_op)
-    print(f"Accuracy: {acc}")
-    
-    
-    results = {
-        "Accuracy": acc
-    }
+    for data_name, split_name in [("allenai/ai2_arc", "ARC-Easy"), ("google/boolq", "validation"), ("allenai/openbookqa", "main"), ("piqa", "validation")]:
+        dataset = load_dataset(data_name, split_name)
+        actual_op, model_op = return_outputs(dataset, inferencer, model)
+        acc = compute_acc(actual_op, model_op)
+        print(f"Accuracy: {acc}")
+        
+        results["data_name"] = acc
+        
     
     save_path = f"{eval_resps_save_root}/{model_save}/evaluate_helpfulness_results.json"
     with open(save_path, 'w') as f:
