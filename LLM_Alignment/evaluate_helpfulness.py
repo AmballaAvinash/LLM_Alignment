@@ -187,13 +187,14 @@ if __name__=="__main__":
     
     results = {}
 
-    for data_name, split_name in [("allenai/ai2_arc", "ARC-Easy"), ("google/boolq", "validation"), ("allenai/openbookqa", "main"), ("piqa", "validation")]:
+    for data_name, split_name in [("allenai/ai2_arc", "ARC-Easy"), ("google/boolq", "default"), ("allenai/openbookqa", "main"), ("piqa", "plain_text")]:
+        print(data_name)
         dataset = load_dataset(data_name, split_name)
         actual_op, model_op = return_outputs(dataset, inferencer, model)
         acc = compute_acc(actual_op, model_op)
         print(f"Accuracy: {acc}")
         
-        results["data_name"] = acc
+        results[data_name] = acc
         
     
     save_path = f"{eval_resps_save_root}/{model_save}/evaluate_helpfulness_results.json"
