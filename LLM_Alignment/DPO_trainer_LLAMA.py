@@ -271,6 +271,7 @@ if __name__ == "__main__":
     dd += "data/sft_training_data_only_ift.hf"
     
     parser.add_argument("--model_name_or_path", type=str, default="allenai/OLMo-1B", help="Model name or path")
+    parser.add_argument("--train_size", type=float, default=1, help="Train data size")
     parser.add_argument("--train_data_path", type=str, default=dd, help="Training Data Path")
 
     parser.add_argument("--per_device_train_batch_size", type=int, default=4, help="Training batch size per device")
