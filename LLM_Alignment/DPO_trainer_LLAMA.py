@@ -126,9 +126,9 @@ class Trainer:
             save_strategy=self.input_args.save_strategy,       # Save the model checkpoint every logging step
             save_steps=self.input_args.save_steps,                # Save checkpoints every 100 steps
             save_total_limit=30,
-            # evaluation_strategy=self.input_args.evaluation_strategy, # Evaluate the model every epoch
-            # eval_steps=self.input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
-            # do_eval=True,                # Perform evaluation at the end of training
+            evaluation_strategy=self.input_args.evaluation_strategy, # Evaluate the model every epoch
+            eval_steps=self.input_args.eval_steps,               # Evaluate and save checkpoints every 100 steps
+            do_eval=True,                # Perform evaluation at the end of training
             report_to=self.input_args.report_to,           # Comment this out if you don't want to use weights & baises
             dataloader_pin_memory=True,                           
             dataloader_num_workers=4,
@@ -157,6 +157,13 @@ class Trainer:
         self.train_dataset = load_from_disk("LLM_Alignment/data/DPO_safe_rlhf_train_data.hf")
         self.eval_dataset = load_from_disk("LLM_Alignment/data/DPO_safe_rlhf_eval_data.hf")
         self.test_dataset = load_from_disk("LLM_Alignment/data/DPO_safe_rlhf_test_data.hf")
+        
+        
+        train_dataset_pd = self.train_dataset.to_pandas()
+        n_sample = int(self.input_args.train_size*len(train_dataset_pd))
+        train_dataset_sample = train_dataset_pd.sample(n_sample)
+        self.train_dataset = Dataset.from_pandas(train_dataset_sample)
+        
 
         print("Train Dataset : ", self.train_dataset)
         print("Eval Dataset : ", self.eval_dataset)

@@ -37,6 +37,6 @@ model = AutoModelForCausalLM.from_pretrained(model_id,
 
 
 
-model_id = "AvinashAmballa/LLAMA-7B-8000"
-model.push_to_hub('model_id',  safe_serialization=False)
-tokenizer.push_to_hub("model_id")
+model_id = "DPO-LLAMA-7B-8000"
+model.push_to_hub(model_id,  safe_serialization=False)
+tokenizer.push_to_hub(model_id)
