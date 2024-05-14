@@ -36,14 +36,11 @@ bnb_config = BitsAndBytesConfig(
         bnb_4bit_quant_type="nf4",
         bnb_4bit_compute_dtype=torch.bfloat16
     )
-print("############### BNB config done")
 
 model = AutoModelForCausalLM.from_pretrained(model_id, 
                                              quantization_config=bnb_config, 
                                              device_map={"": 0},
                                             use_cache=False)
-
-model = AutoModelForCausalLM.from_pretrained(model_id, device_map=device)
 
 
 
