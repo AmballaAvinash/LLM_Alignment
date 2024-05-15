@@ -25,7 +25,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false" # to avoid warning "Tokenizer dea
 os.environ["HF_TOKEN"] = "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" #write token
 
 
-model_id = "./saved-models/DPO_LLAMA-7B_0.0625/merged_model"
+model_id = "AvinashAmballa/DPO_LLAMA-7B_0.125"
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 tokenizer.pad_token_id = (0)
@@ -36,7 +36,8 @@ model = AutoModelForCausalLM.from_pretrained(model_id,
                                             use_cache=False)
 
 
+print("loaded")
 
-model_id = "DPO_LLAMA-7B_0.0625"
-model.push_to_hub(model_id,  safe_serialization=False)
-tokenizer.push_to_hub(model_id)
+# model_id = "DPO_LLAMA-7B_0.0625"
+# model.push_to_hub(model_id,  safe_serialization=False)
+# tokenizer.push_to_hub(model_id)
