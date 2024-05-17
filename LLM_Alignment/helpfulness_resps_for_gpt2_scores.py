@@ -49,7 +49,7 @@ if __name__=="__main__":
     save_name = input_args.save_name
     
     # generate responses
-    test_data_file = "alpaca_test.json"
+    test_data_file = "LLM_Alignment/alpaca_test.json"
     with open(test_data_file, 'r') as f:
         data = json.load(f)
         
