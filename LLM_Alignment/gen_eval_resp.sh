@@ -21,7 +21,6 @@ python LLM_Alignment/generate_responses_for_safe_datasets.py \
     --save_name DPO_LLAMA-7B
     
     
-python LLM_Alignment/LLAMAguard_evaluate.py
+python LLM_Alignment/LLAMAguard_evaluate.py --model_save DPO_LLAMA-7B 
 
-python LLM_Alignment/evaluate_helpfulness.py \
-    --model_name_or_path ./saved-models/DPO_LLAMA-7B/merged_model
+

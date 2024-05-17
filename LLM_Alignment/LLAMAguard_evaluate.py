@@ -11,6 +11,8 @@ import torch
 import os
 import json
 from tqdm import tqdm
+import argparse
+
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false" # to avoid warning "Tokenizer deadlocks"
 
@@ -62,6 +64,11 @@ def run_end_to_end(data_file, save_back=False):
     
 
 
+parser = argparse.ArgumentParser(description="LLAMA guard Training Arguments")
+
+parser.add_argument("--model_save", type=str, default="DPO_LLAMA-7B_1", help="Model name or path")
+
+input_args = parser.parse_args()
 
 eval_datasets = [
     'I-Alpaca.json',
@@ -73,7 +80,7 @@ eval_datasets = [
 ]
 
 eval_resps_save_root = "LLM_Alignment/output"
-model_save = "DPO_LLAMA-7B"
+model_save = input_args.model_save
 
 results = {
     
