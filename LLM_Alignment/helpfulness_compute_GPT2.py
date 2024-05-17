@@ -2,7 +2,6 @@ from datasets import load_dataset
 import json
 import pandas as pd
 import sys
-sys.path.append("/home/jupyter/LLM_Alignment/updated_sft/scripts")
 from prompter import Prompter
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -42,7 +41,7 @@ with torch.no_grad():
 print(reward)
 
 
-datafile = "/home/jupyter/LLM_Alignment/updated_sft/scripts/helpfulness_evaluation/helpfulness_sandeep/raft-human-2_alpaca_test.json"
+datafile = "LLM_Alignment/output/DPO_LLAMA-7B_alpaca_test.json"
 
 with open(datafile, 'r') as f:
     data = json.load(f)
@@ -73,14 +72,17 @@ for i in tqdm(range(len(data['instructions']))):
     
     
 test = all_outputs.copy()
-
-
+test.sort()
+print(test[475])
+print("\n")
 all_ops = get_rew_scores(data['instructions'], data['model_responses'])
 
 
-sum(all_ops)/len(all_ops)
+print(sum(all_ops)/len(all_ops))
+print("\n")
+
 
 test_all_ops = all_ops.copy()
 
 test_all_ops.sort()
-test_all_ops[475]
+print(test_all_ops[475])
