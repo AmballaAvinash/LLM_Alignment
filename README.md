@@ -16,3 +16,16 @@ DPO references:
 1. https://github.com/mlabonne/llm-course/blob/main/Fine_tune_a_Mistral_7b_model_with_DPO.ipynb
 2. https://huggingface.co/blog/dpo-trl
 3. https://gist.github.com/alvarobartt/9898c33eb3e9c7108d9ed2330f12a708
+
+
+
+
+Training:
+trainer_bash.sh
+
+
+Evaluation:
+gen_eval_resp.sh
+
+Push to hub:
+push_to_hub.py 
